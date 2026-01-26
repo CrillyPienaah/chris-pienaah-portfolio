@@ -157,6 +157,54 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 3.5 TESTIMONIALS SECTION */}
+      <section className="bg-gray-900/30 border-y border-gray-800 py-20">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-3xl font-bold mb-12 text-center">What People Say</h2>
+          
+          <div className="bg-gradient-to-br from-yellow-500/5 to-orange-500/5 border border-yellow-500/20 rounded-2xl p-8 mb-8">
+            <div className="flex gap-1 mb-6 justify-center items-center">
+              {[1,2,3,4,5].map((star) => (
+                <svg key={star} className="w-7 h-7 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+              <span className="ml-3 text-2xl font-bold text-yellow-400">5.0</span>
+            </div>
+
+            <blockquote className="text-xl text-gray-300 text-center mb-8 leading-relaxed">
+              "Great job! This individual and their entire team gave this project their very best effort! Much appreciative of the opportunity to work with him. <span className="text-yellow-400">Personally he really drove this project forward and served in a great 'quarterback role'</span> for this project. We continue to collaborate!"
+            </blockquote>
+
+            <div className="text-center">
+              <div className="font-bold text-white text-lg">Derrick Raphael</div>
+              <div className="text-gray-400">Chief Digital Officer</div>
+              <div className="text-gray-500 text-sm mt-2">ICON Leadership Institute</div>
+              <div className="text-gray-600 text-xs mt-1">AI Guided Web App Development (DTTP) • September 2025</div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+            <div className="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+              <div className="text-yellow-400 font-bold mb-2">⭐⭐⭐⭐⭐</div>
+              <div className="text-sm text-gray-400">Communication</div>
+            </div>
+            <div className="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+              <div className="text-yellow-400 font-bold mb-2">⭐⭐⭐⭐⭐</div>
+              <div className="text-sm text-gray-400">Professionalism</div>
+            </div>
+            <div className="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+              <div className="text-yellow-400 font-bold mb-2">⭐⭐⭐⭐⭐</div>
+              <div className="text-sm text-gray-400">Creativity</div>
+            </div>
+            <div className="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
+              <div className="text-yellow-400 font-bold mb-2">⭐⭐⭐⭐⭐</div>
+              <div className="text-sm text-gray-400">Critical Thinking</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 4. SKILLS SNAPSHOT */}
       <section className="bg-gray-900/30 border-y border-gray-800">
         <div className="max-w-5xl mx-auto px-6 py-24">

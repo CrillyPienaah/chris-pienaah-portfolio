@@ -16,10 +16,10 @@ export default function Home() {
               <Cpu size={14} /> Multi-Agent AI & LLMs
             </span>
             <span className="flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-bold tracking-wide uppercase border border-purple-500/20">
-              <Layers size={14} /> Full-Stack Systems
+              <Layers size={14} /> Production Pipelines
             </span>
             <span className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold tracking-wide uppercase border border-emerald-500/20">
-              <Database size={14} /> Data Warehousing
+              <Database size={14} /> Financial Data Engineering
             </span>
           </div>
 
@@ -28,15 +28,15 @@ export default function Home() {
           </h1>
           
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-200 mb-6">
-            AI/ML Product Engineer · Full-Stack Builder · Data Engineer
+            AI/ML & Data Engineer · Production Pipelines · Agentic Systems · Financial Data
           </h2>
 
           <p className="text-xl text-gray-400 max-w-2xl leading-relaxed mb-8">
-            I design and ship intelligent systems — from <strong>multi-agent LLM workflows</strong> to scalable <strong>data platforms</strong> and production-grade <strong>full-stack apps</strong>.
+            I engineer production-grade ML pipelines, scalable data architectures, and multi-agent AI systems — from real-time financial data ingestion to document intelligence APIs and self-healing ETL infrastructure.
           </p>
 
           <p className="text-sm font-mono text-gray-500 mb-10">
-            4+ production MVPs · Multi-agent AI · Recommender systems · ETL & Star Schemas · Real-world impact
+            Self-Healing Pipelines · 431M+ records · PDF-to-SQL 95.4% accuracy · NLP Pipelines 3× throughput · OSFI E-23 Compliant
           </p>
 
           {/* CTAs */}
@@ -69,7 +69,7 @@ export default function Home() {
       {/* 1.5 POSITIONING STATEMENT */}
       <section className="max-w-4xl mx-auto px-6 py-16 text-center border-b border-gray-800">
         <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-          I build AI systems that move from <strong className="text-white">idea → architecture → product → impact</strong>—especially for high-stakes and underserved domains where trust isn't optional.
+          I build AI systems that move from <strong className="text-white">idea → architecture → product → impact</strong>—especially for high-stakes and underserved domains where trust isn&apos;t optional.
         </p>
       </section>
 
@@ -173,7 +173,7 @@ export default function Home() {
             </div>
 
             <blockquote className="text-xl text-gray-300 text-center mb-8 leading-relaxed">
-              "Great job! This individual and their entire team gave this project their very best effort! Much appreciative of the opportunity to work with him. <span className="text-yellow-400">Personally he really drove this project forward and served in a great 'quarterback role'</span> for this project. We continue to collaborate!"
+              &quot;Great job! This individual and their entire team gave this project their very best effort! Much appreciative of the opportunity to work with him. <span className="text-yellow-400">Personally he really drove this project forward and served in a great &apos;quarterback role&apos;</span> for this project. We continue to collaborate!&quot;
             </blockquote>
 
             <div className="text-center">
@@ -219,25 +219,10 @@ export default function Home() {
                     </div>
                     <ul className="space-y-2 text-gray-400 text-sm">
                         <li>LLMs & Transformers</li>
-                        <li>LangChain & Agents</li>
-                        <li>Prompt Engineering</li>
+                        <li>LangChain & LangGraph</li>
+                        <li>RAG Pipelines</li>
                         <li>scikit-learn & XGBoost</li>
-                        <li>NLP Pipelines</li>
-                    </ul>
-                </div>
-
-                {/* Full Stack */}
-                <div className="space-y-4">
-                    <div className="flex items-center gap-2 text-purple-400 mb-2">
-                        <Layers size={20} />
-                        <h4 className="font-bold">Full-Stack</h4>
-                    </div>
-                    <ul className="space-y-2 text-gray-400 text-sm">
-                        <li>Next.js (React)</li>
-                        <li>FastAPI (Python)</li>
-                        <li>NestJS (Node)</li>
-                        <li>REST & GraphQL APIs</li>
-                        <li>Auth & JWT</li>
+                        <li>NLP & Document AI</li>
                     </ul>
                 </div>
 
@@ -245,14 +230,29 @@ export default function Home() {
                 <div className="space-y-4">
                     <div className="flex items-center gap-2 text-emerald-400 mb-2">
                         <Database size={20} />
-                        <h4 className="font-bold">Data Eng</h4>
+                        <h4 className="font-bold">Data Engineering</h4>
                     </div>
                     <ul className="space-y-2 text-gray-400 text-sm">
-                        <li>SQL (Advanced)</li>
-                        <li>PostgreSQL & MySQL</li>
-                        <li>ETL Pipelines</li>
-                        <li>Star Schemas (Kimball)</li>
-                        <li>Normalization (3NF)</li>
+                        <li>Azure Data Factory</li>
+                        <li>BigQuery & Snowflake</li>
+                        <li>Airflow & dbt</li>
+                        <li>ETL/ELT Pipelines</li>
+                        <li>Feature Engineering</li>
+                    </ul>
+                </div>
+
+                {/* MLOps */}
+                <div className="space-y-4">
+                    <div className="flex items-center gap-2 text-purple-400 mb-2">
+                        <Layers size={20} />
+                        <h4 className="font-bold">MLOps</h4>
+                    </div>
+                    <ul className="space-y-2 text-gray-400 text-sm">
+                        <li>MLflow & Model Registry</li>
+                        <li>CI/CD & GitHub Actions</li>
+                        <li>Docker & Containers</li>
+                        <li>Drift Detection</li>
+                        <li>OSFI E-23 & SR 11-7</li>
                     </ul>
                 </div>
 
@@ -263,11 +263,11 @@ export default function Home() {
                         <h4 className="font-bold">Cloud & Tools</h4>
                     </div>
                     <ul className="space-y-2 text-gray-400 text-sm">
-                        <li>AWS & Azure</li>
-                        <li>Docker & Containers</li>
-                        <li>Git & CI/CD</li>
-                        <li>Power BI & Tableau</li>
-                        <li>Vercel Deployment</li>
+                        <li>AWS & Azure & GCP</li>
+                        <li>FastAPI & Python</li>
+                        <li>PostgreSQL & SQL</li>
+                        <li>Power BI & Looker</li>
+                        <li>Git & Vercel</li>
                     </ul>
                 </div>
             </div>
@@ -278,13 +278,13 @@ export default function Home() {
       <section className="max-w-3xl mx-auto px-6 py-32 text-center">
         <h2 className="text-4xl font-bold mb-6">Ready to build something intelligent?</h2>
         <p className="text-xl text-gray-400 mb-8">
-            I am currently open to new opportunities in AI Product Engineering and Full-Stack Development.
+          I am currently open to ML Engineer, AI Engineer, and Data Engineer opportunities across Canada.
         </p>
         <a 
           href="mailto:ccpienaah@gmail.com" 
           className="inline-block px-10 py-4 bg-white text-black font-bold text-lg rounded-full hover:bg-blue-400 hover:text-white transition-all shadow-lg shadow-white/10"
         >
-          Let's Talk
+          Let&apos;s Talk
         </a>
       </section>
       

@@ -16,8 +16,6 @@ export interface Project {
   demoUrl?: string; 
   featured: boolean;
   description: string; 
-
-  // CASE STUDY FIELDS
   problem?: string;
   solution?: string;
   impact?: string[]; 
@@ -63,7 +61,7 @@ export const projects: Project[] = [
       "Successfully integrated HL7/FHIR standards for interoperability."
     ]
   },
-  
+
   {
     id: "daavi",
     title: "Daavi",
@@ -83,7 +81,6 @@ export const projects: Project[] = [
     ]
   },
 
-  // NEW: Self-Healing Data Pipeline Platform (Replaces Hyperlocal Ad Optimizer)
   {
     id: "self-healing-pipelines",
     title: "Self-Healing Data Pipeline Platform",
@@ -103,6 +100,66 @@ export const projects: Project[] = [
       "Eliminates 3am alerts and weekend firefighting through autonomous remediation",
       "Achieves 85-92% confidence on generated fixes with 100% safety validation rate",
       "First autonomous pipeline remediation platform - deployed and running on AWS"
+    ]
+  },
+
+  {
+    id: "pdf-to-sql-pipeline",
+    title: "PDF-to-SQL Pipeline",
+    subtitle: "AI-powered document extraction API converting unstructured financial PDFs into structured JSON — local-first, $0.0005 per document.",
+    category: "Data Engineering",
+    techStack: ["Python", "Docling OCR", "Gemini Flash-Lite", "FastAPI", "PostgreSQL", "Docker"],
+    repoUrl: "https://github.com/CrillyPienaah/pdf-to-sql-pipeline",
+    featured: true,
+    description: "3-layer document intelligence pipeline: local OCR extraction, LLM schema mapping, and deterministic validation — designed for regulated financial environments where data sovereignty matters.",
+    problem: "Financial institutions processing bank statements, invoices, and clinical notes manually face high error rates, slow turnaround, and data sovereignty risks when sending sensitive documents to cloud OCR services. Existing solutions cost $0.01–$0.05 per document and require data to leave the organisation's infrastructure.",
+    solution: "Built a 3-layer pipeline: Docling OCR runs locally on CPU (no cloud, no GPU, original PDF never leaves the machine), Gemini Flash-Lite maps extracted text to typed structured JSON via few-shot prompting, and a deterministic validation engine enforces business rules with zero LLM involvement in the trust layer.",
+    impact: [
+      "Achieved 95.4% accuracy across bank statements, invoices, and clinical notes",
+      "Cost of $0.0005 per document — 20-100x cheaper than existing cloud OCR solutions",
+      "Data sovereignty by design — original PDFs never leave the local machine",
+      "Supports 7 document types with domain-specific extraction models",
+      "FastAPI REST endpoints with Swagger UI for enterprise integration"
+    ]
+  },
+
+  {
+    id: "chrisline-trading",
+    title: "CHRiSLINE Algorithmic Trading System",
+    subtitle: "Production-grade real-time financial data pipeline with multi-timeframe feature engineering — 2.51 Profit Factor, 1.6% max drawdown over 28 months.",
+    category: "Data Engineering",
+    techStack: ["Python", "MetaTrader 5", "PostgreSQL", "Multi-Timeframe Data", "Feature Engineering"],
+    repoUrl: "https://github.com/CrillyPienaah/ForexTradeSentinel",
+    featured: false,
+    description: "Real-time financial data ingestion and signal processing system consuming OHLCV tick data across 5 timeframes through a 3-layer feature engineering pipeline with automated performance monitoring.",
+    problem: "Manual trading decisions based on single-timeframe analysis miss multi-scale market structure signals. Most algorithmic systems lack rigorous feature engineering, anomaly detection, and production-grade observability for live financial data.",
+    solution: "Engineered a real-time data ingestion system consuming multi-timeframe OHLCV tick data (M15/H1/H4/D1/W1) across NAS100 and XAUUSD. Built a 3-layer feature engineering pipeline: structural signal detection (BOS, CHoCH, OB+FVG), conviction scoring with stability gates, and kill-zone scheduling. Automated backtesting engine with anomaly detection, performance monitoring, trade logging, and equity brake alerting.",
+    impact: [
+      "Profit Factor 2.51 across 262 validated trades over 28 months",
+      "1.6% maximum drawdown — FTMO compliant for $100K challenge",
+      "47.5% win rate with asymmetric risk/reward profile",
+      "Processes 55K+ bars across 5 timeframes with real-time signal validation",
+      "Autonomous execution with conviction gates preventing low-quality entries"
+    ]
+  },
+
+  {
+    id: "volta-iva",
+    title: "Volta IVA — World Bank Energy Verification",
+    subtitle: "Independent Verification Agent platform for World Bank PAD4401 energy sector programme — three-source reconciliation with cryptographic audit trails.",
+    category: "Flagship AI",
+    techStack: ["Python", "FastAPI", "React", "SHA-256", "Trillian Merkle Tree", "GCP", "RFC 3161"],
+    repoUrl: "https://github.com/CrillyPienaah/project-volta-v2",
+    featured: false,
+    description: "World Bank-grade data verification platform reconciling official energy utility data from three independent government sources with cryptographically tamper-evident audit trails.",
+    problem: "Ghana's energy sector loses GH₵2.95bn annually in unverified revenue. World Bank PAD4401 (US$260M IDA Credit) legally requires Independent Verification Agents under Schedule 2 Section I.D.1 — but no existing platform provides multi-source reconciliation with cryptographic integrity guarantees.",
+    solution: "Built a three-source reconciliation engine ingesting ECG Zeus billing data, GRIDCo SCADA physical delivery measurements, and GRA treasury receipts simultaneously. Any gap between sources is mathematically visible and cannot be hidden by manipulating any single source. Every reconciled record is hashed with SHA-256 and written to an append-only Trillian Merkle tree with RFC 3161 timestamping.",
+    impact: [
+      "Identified GH₵2.95bn in unverified revenue across all 12 months of 2024",
+      "All 12 months rated CRITICAL risk — consistent with Auditor-General's 2024 findings",
+      "GH₵246M undeclared revenue per month surfaced through three-source reconciliation",
+      "Cryptographic audit trail using SHA-256 + Trillian Merkle tree + RFC 3161 timestamping",
+      "First platform in West Africa with multi-source reconciliation and DLI scoring for World Bank PforR programmes"
     ]
   },
 

@@ -234,5 +234,24 @@ export const projects: Project[] = [
       "Enabled granular trend analysis on investor cohorts and startup sectors."
     ]
   }
+  ,{
+    id: "genai-reliability-framework",
+    title: "GenAI Reliability Framework",
+    subtitle: "Production-grade LLM evaluation harness for regulated medical and financial workflows — OSFI E-23 aligned.",
+    category: "Flagship AI",
+    techStack: ["Python", "LangGraph", "FastAPI", "Next.js", "OpenAI", "GitHub Actions"],
+    imageUrl: "/projects/genai-reliability-cover.png",
+    repoUrl: "https://github.com/CrillyPienaah/genai-reliability-framework",
+    demoUrl: "https://genai-reliability-framework.vercel.app",
+    featured: true,
+    description: "Automated validation pipeline that catches LLM hallucinations before they reach production.",
+    problem: "Deploying LLMs in regulated industries requires proof that outputs are accurate and traceable.",
+    solution: "Built a 5-node LangGraph pipeline with deterministic grounding checks and bootstrapped CI gates.",
+    impact: [
+      "93.3% medical accuracy with 95% CI [90.8%, 96.0%] across 30 clinical test cases",
+      "93.5% financial compliance accuracy [89.2%, 97.0%] across 20 OSFI-framed test cases",
+      "100% factual grounding score — every entity verified against source documents",
+      "OSFI E-23 model risk management alignment for Canadian federally regulated institutions"
+    ]
+  }
 ];
-

@@ -254,4 +254,24 @@ export const projects: Project[] = [
       "OSFI E-23 model risk management alignment for Canadian federally regulated institutions"
     ]
   }
+  {
+    id: "canfinbench",
+    title: "CanFinBench",
+    subtitle: "The first public LLM benchmark for Canadian financial regulatory compliance — OSFI E-23, FINTRAC, IFRS 9, Basel III, PIPEDA, and CASL.",
+    category: "Flagship AI",
+    techStack: ["Python", "Hugging Face", "OSFI E-23", "LLM Evaluation", "Open Source"],
+    imageUrl: "/projects/canfinbench-cover.png",
+    repoUrl: "https://github.com/CrillyPienaah/CanFinBench",
+    demoUrl: "https://huggingface.co/datasets/CrillyPienaah/CanFinBench",
+    featured: true,
+    description: "The first open LLM benchmark for Canadian financial regulatory compliance — 57 expert-validated cases across 7 regulatory domains.",
+    problem: "No public benchmark existed to evaluate LLMs on Canadian financial regulations before deployment.",
+    solution: "Built 57 expert-validated cases across OSFI E-23, FINTRAC, B-20, IFRS 9, Basel III, PIPEDA, and CASL with three task archetypes.",
+    impact: [
+      "First public Canadian financial regulatory LLM benchmark on Hugging Face",
+      "57 expert-validated cases across 7 regulatory domains with primary source citations",
+      "eval.yaml for Hugging Face Community Evals automatic leaderboard integration",
+      "Directly addresses OSFI E-23 model validation requirements in force May 2027"
+    ]
+  }
 ];

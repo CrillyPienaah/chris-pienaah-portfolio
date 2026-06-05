@@ -253,11 +253,11 @@ export const projects: Project[] = [
       "100% factual grounding score ΓÇö every entity verified against source documents",
       "OSFI E-23 model risk management alignment for Canadian federally regulated institutions"
     ]
-  }
+  },
   {
     id: "canfinbench",
     title: "CanFinBench",
-    subtitle: "The first public LLM benchmark for Canadian financial regulatory compliance ù OSFI E-23, FINTRAC, IFRS 9, Basel III, PIPEDA, and CASL.",
+    subtitle: "The first public LLM benchmark for Canadian financial regulatory compliance - OSFI E-23, FINTRAC, IFRS 9, Basel III, PIPEDA, and CASL.",
     category: "Flagship AI",
     techStack: ["Python", "Hugging Face", "OSFI E-23", "LLM Evaluation", "Open Source"],
     imageUrl: "/projects/canfinbench-cover.png",

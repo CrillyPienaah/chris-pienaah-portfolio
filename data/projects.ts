@@ -274,6 +274,4 @@ export const projects: Project[] = [
       "Directly addresses OSFI E-23 model validation requirements in force May 2027"
     ]
   }
-    ]
-  }
 ];

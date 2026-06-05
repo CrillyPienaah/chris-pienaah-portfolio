@@ -237,7 +237,7 @@ export const projects: Project[] = [
   ,{
     id: "genai-reliability-framework",
     title: "GenAI Reliability Framework",
-    subtitle: "Production-grade LLM evaluation harness for regulated medical and financial workflows ΓÇö OSFI E-23 aligned.",
+    subtitle: "Production-grade LLM evaluation harness for regulated medical and financial workflows - OSFI E-23 aligned.",
     category: "Flagship AI",
     techStack: ["Python", "LangGraph", "FastAPI", "Next.js", "OpenAI", "GitHub Actions"],
     imageUrl: "/projects/genai-reliability-cover.png",

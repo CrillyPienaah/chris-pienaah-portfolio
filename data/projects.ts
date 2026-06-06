@@ -274,4 +274,24 @@ export const projects: Project[] = [
       "Directly addresses OSFI E-23 model validation requirements in force May 2027"
     ]
   }
+  ,{
+    id: "osfi-navigator",
+    title: "OSFI Navigator",
+    subtitle: "RAG-powered Canadian financial regulatory compliance assistant — grounded answers from OSFI E-23, FINTRAC, B-20, IFRS 9, Basel III, PIPEDA, and CASL.",
+    category: "Flagship AI",
+    techStack: ["Python", "FastAPI", "LangChain", "RAG", "Next.js", "Railway"],
+    imageUrl: "/projects/osfi-navigator-cover.png",
+    repoUrl: "https://github.com/CrillyPienaah/osfi-navigator",
+    demoUrl: "https://osfi-navigator-frontend.vercel.app",
+    featured: true,
+    description: "RAG-powered assistant for Canadian financial regulatory compliance — grounded answers from 7 regulatory domains.",
+    problem: "No tool existed to query Canadian financial regulations with grounded, cited answers before deployment validation.",
+    solution: "Built a RAG pipeline over OSFI E-23, FINTRAC, B-20, IFRS 9, Basel III, PIPEDA, and CASL with hallucination guardrails.",
+    impact: [
+      "Live production deployment — FastAPI on Railway, Next.js on Vercel",
+      "Grounded answers with citations to specific regulatory sections",
+      "GPT-4o Mini and GPT-4o model toggle with Pareto frontier scoring",
+      "Powered by CanFinBench regulatory corpus"
+    ]
+  }
 ];

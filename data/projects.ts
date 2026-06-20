@@ -22,6 +22,27 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+
+  {
+  id: "governance-control-tower",
+  title: "Enterprise AI Governance Control Tower",
+  subtitle: "Multi-agent system that evaluates AI models for production readiness — a fraud model achieving AUC 0.969 is BLOCKED due to fairness violations and drift.",
+  category: "Flagship AI",
+  techStack: ["Python", "Google ADK", "AsyncIO", "MCP", "FastAPI", "OSFI E-23"],
+  repoUrl: "https://github.com/CrillyPienaah/governance-control-tower",
+  demoUrl: "https://youtu.be/X6ikEwOH7MQ",
+  featured: true,
+  description: "Multi-agent AI governance platform coordinating five specialized agents to determine whether an AI model should be deployed — not just how accurate it is.",
+  problem: "Financial institutions deploy high-performing models without adequate governance review. Fairness testing is skipped, drift monitoring is absent, and documentation gaps go undetected — until an OSFI examiner finds them after deployment.",
+  solution: "Built a Governance Supervisor Agent using Google ADK patterns coordinating five specialized agents: Regulatory Intelligence, Compliance Assessment, Model Risk, Reliability Evaluation, and Benchmarking. All findings feed into a deterministic guardrail engine — no LLM can override the final decision.",
+  impact: [
+    "Demonstrated that a fraud model achieving AUC 0.969 is BLOCKED due to AIR 0.59 and PSI 0.25",
+    "8 deterministic governance rules — llm_override_possible: False",
+    "Unifies five live deployed governance systems into a single multi-agent pipeline",
+    "Kaggle AI Agents Intensive Capstone 2026 — Agents for Business track",
+    "Aligned with OSFI Guideline E-23 model risk management expectations"
+  ]
+},
   {
     id: "sme-growth-copilot",
     title: "SME Growth Co-Pilot",

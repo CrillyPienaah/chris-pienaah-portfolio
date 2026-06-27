@@ -3,16 +3,25 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, ExternalLink, Github } from 'lucide-react';
+import { ArrowUpRight, Cpu, ExternalLink, Github } from 'lucide-react';
 import { Project } from '../data/projects';
 
 interface ProjectCardProps {
   project: Project;
   featured?: boolean;
+  onViewArchitecture?: (project: Project) => void;
 }
 
-export default function ProjectCard({ project, featured = false }: ProjectCardProps) {
+export default function ProjectCard({ project, featured = false, onViewArchitecture }: ProjectCardProps) {
   const projectMetrics: Record<string, { value: string; label: string; color: string }[]> = {
+    'governance-control-tower': [
+      { value: 'OSFI E-23', label: 'regulatory', color: 'text-blue-400' },
+      { value: 'Blocked', label: 'fairness fail', color: 'text-red-400' }
+    ],
+    'sme-growth-copilot': [
+      { value: '100%', label: 'success rate', color: 'text-emerald-400' },
+      { value: '1ms', label: 'response time', color: 'text-blue-400' }
+    ],
     'luminamed': [
       { value: '92%', label: 'accuracy', color: 'text-emerald-400' },
       { value: '-40%', label: 'time saved', color: 'text-blue-400' }
@@ -20,20 +29,9 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
     'daavi': [
       { value: '95%', label: 'fraud filtering', color: 'text-emerald-400' }
     ],
-    'hyperlocal-ad': [
-      { value: '94%', label: 'faster setup', color: 'text-violet-400' }
-    ],
     'customer-churn': [
       { value: '86.93%', label: 'accuracy', color: 'text-emerald-400' },
       { value: '2x', label: 'sensitivity', color: 'text-blue-400' }
-    ],
-    'propensity-modeling': [
-      { value: '93%', label: 'AUC', color: 'text-blue-400' },
-      { value: '3x', label: 'ROI lift', color: 'text-emerald-400' }
-    ],
-    'hud-inspections': [
-      { value: '87%', label: 'accuracy', color: 'text-emerald-400' },
-      { value: '$500K+', label: 'savings', color: 'text-blue-400' }
     ],
     'self-healing-pipelines': [
       { value: '431M+', label: 'records/day', color: 'text-blue-400' },
@@ -56,17 +54,17 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
   const metrics = projectMetrics[project.id] || [];
 
   const categoryColors: Record<string, string> = {
-    "Flagship AI": "from-blue-500/20 to-purple-500/20 border-blue-500/30",
-    "Data Engineering": "from-emerald-500/20 to-teal-500/20 border-emerald-500/30",
-    "Machine Learning": "from-orange-500/20 to-red-500/20 border-orange-500/30",
-    "Product Strategy": "from-violet-500/20 to-pink-500/20 border-violet-500/30"
+    "Flagship AI": "from-zinc-900 via-zinc-900 to-zinc-950 border-zinc-800 hover:border-blue-500/40",
+    "Data Engineering": "from-zinc-900 via-zinc-900 to-zinc-950 border-zinc-800 hover:border-emerald-500/40",
+    "Machine Learning": "from-zinc-900 via-zinc-900 to-zinc-950 border-zinc-800 hover:border-orange-500/40",
+    "Product Strategy": "from-zinc-900 via-zinc-900 to-zinc-950 border-zinc-800 hover:border-purple-500/40"
   };
 
   const categoryTextColors: Record<string, string> = {
     "Flagship AI": "text-blue-400",
     "Data Engineering": "text-emerald-400",
     "Machine Learning": "text-orange-400",
-    "Product Strategy": "text-violet-400"
+    "Product Strategy": "text-purple-400"
   };
 
   const handleLinkClick = (e: React.MouseEvent, url: string) => {
@@ -75,104 +73,127 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
+  const handleViewArchitectureClick = (e: React.MouseEvent) => {
+    if (onViewArchitecture) {
+      e.preventDefault();
+      e.stopPropagation();
+      onViewArchitecture(project);
+    }
+  };
+
   return (
-    <article className={`relative h-full bg-gradient-to-br ${categoryColors[project.category]} backdrop-blur-sm rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/20 flex flex-col border ${featured ? 'p-8 md:col-span-2' : 'p-6'}`}>
+    <article className={`relative h-full bg-gradient-to-br ${categoryColors[project.category]} rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/40 flex flex-col border p-6 ${featured ? 'md:col-span-2' : ''}`}>
 
       {/* Image Section */}
       {project.imageUrl ? (
-        <div className={`relative w-full ${featured ? 'h-64' : 'h-48'} bg-gray-900/50 rounded-xl overflow-hidden mb-6 group/image cursor-pointer`}>
+        <div className={`relative w-full ${featured ? 'h-64' : 'h-44'} bg-zinc-950 rounded-xl overflow-hidden mb-6 group/image cursor-pointer`}>
           <Link href={`/projects/${project.id}`}>
             <Image
               src={project.imageUrl}
               alt={`${project.title} preview`}
               fill
-              className="object-cover transition-transform duration-700 hover:scale-110"
+              className="object-cover opacity-80 hover:opacity-100 transition-all duration-500"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </Link>
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
 
-          {/* Hover overlay */}
-          <div className="absolute inset-0 bg-black/60 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 z-10">
+          {/* Hover actions */}
+          <div className="absolute inset-0 bg-black/75 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 z-10">
             {project.repoUrl && (
               <button
                 onClick={(e) => handleLinkClick(e, project.repoUrl!)}
-                className="p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-colors"
-                aria-label="View GitHub repository"
+                className="p-2.5 bg-zinc-900 border border-zinc-800 rounded-lg hover:text-blue-400 hover:border-zinc-700 transition-colors"
+                aria-label="View Code"
               >
-                <Github size={20} className="text-white" />
+                <Github size={18} className="text-zinc-300" />
               </button>
             )}
             {project.demoUrl && (
               <button
                 onClick={(e) => handleLinkClick(e, project.demoUrl!)}
-                className="p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-colors"
-                aria-label="View live demo"
+                className="p-2.5 bg-zinc-900 border border-zinc-800 rounded-lg hover:text-blue-400 hover:border-zinc-700 transition-colors"
+                aria-label="View Demo"
               >
-                <ExternalLink size={20} className="text-white" />
+                <ExternalLink size={18} className="text-zinc-300" />
+              </button>
+            )}
+            {onViewArchitecture && (
+              <button
+                onClick={handleViewArchitectureClick}
+                className="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
+              >
+                <Cpu size={14} /> Arch Overview
               </button>
             )}
           </div>
         </div>
       ) : (
-        <div className={`relative w-full ${featured ? 'h-64' : 'h-48'} bg-gradient-to-br ${categoryColors[project.category]} rounded-xl mb-6 flex items-center justify-center`}>
-          <div className="text-6xl opacity-20">🚀</div>
+        <div className={`relative w-full ${featured ? 'h-64' : 'h-44'} bg-zinc-950 border border-zinc-900/60 rounded-xl mb-6 flex items-center justify-center`}>
+          <div className="text-4xl opacity-20">🚀</div>
         </div>
       )}
 
       {/* Content Section */}
       <Link href={`/projects/${project.id}`} className="flex flex-col flex-grow group">
-        <div className="flex items-center justify-between mb-4">
-          <span className={`text-xs font-bold tracking-wider uppercase ${categoryTextColors[project.category]}`}>
+        <div className="flex items-center justify-between mb-3.5">
+          <span className={`text-xs font-mono font-bold tracking-wider uppercase ${categoryTextColors[project.category]}`}>
             {project.category}
           </span>
           <ArrowUpRight
-            size={20}
-            className="text-gray-600 group-hover:text-blue-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"
+            size={18}
+            className="text-zinc-600 group-hover:text-blue-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300"
           />
         </div>
 
         {/* Metrics Strip */}
         {metrics.length > 0 && (
-          <div className="flex flex-wrap gap-4 mb-4 pb-4 border-b border-gray-800/50">
+          <div className="flex flex-wrap gap-4 mb-3.5 pb-3 border-b border-zinc-800/50">
             {metrics.map((metric, index) => (
-              <div key={index} className="flex items-baseline gap-1.5">
-                <span className={`text-2xl font-bold ${metric.color}`}>{metric.value}</span>
-                <span className="text-xs text-gray-500 uppercase tracking-wide">{metric.label}</span>
+              <div key={index} className="flex items-baseline gap-1">
+                <span className={`text-xl font-bold font-mono ${metric.color}`}>{metric.value}</span>
+                <span className="text-[10px] text-zinc-500 uppercase tracking-wider font-mono">{metric.label}</span>
               </div>
             ))}
           </div>
         )}
 
-        <h3 className={`font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300 leading-tight ${featured ? 'text-3xl' : 'text-xl'}`}>
+        <h3 className={`font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300 leading-snug ${featured ? 'text-2xl' : 'text-lg'}`}>
           {project.title}
         </h3>
 
-        <p className={`text-gray-400 leading-relaxed mb-6 flex-grow ${featured ? 'text-base' : 'text-sm'}`}>
+        <p className="text-zinc-400 leading-relaxed mb-4 text-xs flex-grow">
           {project.subtitle}
         </p>
 
-        {/* Impact for Featured */}
-        {project.impact && project.impact.length > 0 && featured && (
-          <div className="mb-6 p-4 bg-black/20 rounded-lg border border-gray-800/50">
-            <p className="text-sm font-semibold text-gray-300 mb-2">Key Impact:</p>
-            <p className="text-sm text-gray-400">{project.impact[0]}</p>
+        {/* Action Button Row */}
+        <div className="flex items-center justify-between mt-4 pt-4 border-t border-zinc-900">
+          {/* Tech Stack Pills */}
+          <div className="flex flex-wrap gap-1.5 max-w-[70%]">
+            {project.techStack.slice(0, featured ? 4 : 3).map((tech) => (
+              <span
+                key={tech}
+                className="text-[10px] font-mono text-zinc-400 bg-zinc-950 border border-zinc-900 px-2 py-0.5 rounded"
+              >
+                {tech}
+              </span>
+            ))}
+            {project.techStack.length > (featured ? 4 : 3) && (
+              <span className="text-[9px] font-mono text-zinc-600 px-1 py-0.5">
+                +{project.techStack.length - (featured ? 4 : 3)}
+              </span>
+            )}
           </div>
-        )}
 
-        {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2 mt-auto">
-          {project.techStack.slice(0, featured ? 8 : 5).map((tech) => (
-            <span
-              key={tech}
-              className="text-xs font-medium text-gray-300 bg-gray-900/50 px-3 py-1.5 rounded-full border border-gray-700/50 hover:border-gray-600 transition-colors"
+          {/* Quick Arch Button */}
+          {onViewArchitecture && (
+            <button
+              onClick={handleViewArchitectureClick}
+              className="text-[11px] font-mono text-blue-400 hover:text-white flex items-center gap-1 bg-blue-500/10 hover:bg-blue-600 border border-blue-500/20 hover:border-blue-500 px-2 py-1 rounded transition-all cursor-pointer"
             >
-              {tech}
-            </span>
-          ))}
-          {project.techStack.length > (featured ? 8 : 5) && (
-            <span className="text-xs font-medium text-gray-500 px-3 py-1.5">
-              +{project.techStack.length - (featured ? 8 : 5)}
-            </span>
+              <Cpu size={12} />
+              Arch
+            </button>
           )}
         </div>
       </Link>

@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Christopher Crilly Pienaah | AI/ML Engineer & Product Strategist",
-  description: "AI/ML Product Engineer building intelligent systems for underserved markets—from multi-agent clinical intelligence to verification-first real estate platforms. 3.96 GPA, Northeastern University. Seeking roles at RBC, Scotiabank, TD, Manulife.",
+  description: "AI/ML Product Engineer building intelligent systems for underserved markets—from multi-agent clinical intelligence to verification-first real estate platforms. GPA: 3.97 (Analytics concentration), Northeastern University. Seeking roles at RBC, Scotiabank, TD, Manulife.",
   keywords: [
     "AI Engineer",
     "Machine Learning",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: "Christopher Crilly Pienaah | AI/ML Engineer",
     description: "Building intelligent systems for underserved markets. Multi-agent AI • Full-stack • Data Engineering",
     images: ["/og-image.png"],
-    creator: "@yourtwitter", // Update if you have Twitter
+    creator: "",
   },
 
   // Additional Meta

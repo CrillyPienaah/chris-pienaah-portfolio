@@ -73,8 +73,8 @@ export default function AboutPage() {
             <div className="border border-gray-800 rounded-xl p-6 hover:border-gray-700 transition-colors">
               <h3 className="text-xl font-bold mb-3 text-blue-400">Production ML Pipelines</h3>
               <p className="text-gray-400 leading-relaxed">
-                Self-healing ETL infrastructure processing 431M+ records daily with automated drift detection, 
-                rollback gates, CI/CD-gated retraining, and full audit-trail reproducibility aligned to SR 11-7 standards.
+                Self-healing ML pipeline running 40+ production-grade test scenarios on AWS (App Runner + RDS) with automated drift detection, 
+                rollback gates, CI/CD-gated validation, and full audit-trail reproducibility aligned to SR 11-7 standards.
               </p>
             </div>
 
@@ -90,7 +90,7 @@ export default function AboutPage() {
               <h3 className="text-xl font-bold mb-3 text-violet-400">Multi-Agent AI Systems</h3>
               <p className="text-gray-400 leading-relaxed">
                 Building autonomous agents that reason, plan, and execute tasks. LuminaMed AI orchestrates specialized 
-                agents for medical triage and patient education — reducing radiologist workload by 40%.
+                agents for medical triage and patient education with a HIPAA-aligned design.
               </p>
             </div>
 
@@ -149,7 +149,7 @@ export default function AboutPage() {
                 <GraduationCap className="text-emerald-400" size={24} />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">MPS in Analytics (GPA 3.89/4.0)</h3>
+                <h3 className="text-xl font-bold mb-2">MPS in Analytics (GPA: 3.97 (Analytics concentration))</h3>
                 <p className="text-gray-400 mb-2">Northeastern University | Applied Machine Intelligence Track</p>
                 <p className="text-sm text-gray-500">Graduated May 2026</p>
               </div>
@@ -186,7 +186,7 @@ export default function AboutPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-violet-400 mt-0.5">→</span>
-                    <span>Kaggle × Google AI Agents Intensive — Verified badge (Dec 2025)</span>
+                    <span>Competed in the Kaggle × Google AI Agents Intensive (11,494 teams)</span>
                   </li>
                 </ul>
               </div>

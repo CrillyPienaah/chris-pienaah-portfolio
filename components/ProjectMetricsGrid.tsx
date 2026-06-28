@@ -46,6 +46,111 @@ const projectsData: ProjectCardData[] = [
     hasDeepDive: true
   },
   {
+    id: 'governance-control-tower',
+    title: 'Governance Control Tower',
+    headline: 'Multi-agent supervisor orchestrating specialized auditing workers using Google ADK.',
+    badges: [
+      { label: 'Orchestrator', value: 'Google ADK', color: 'purple' },
+      { label: 'Audit Standard', value: 'OSFI E-23', color: 'blue' }
+    ],
+    techStack: ['Google ADK', 'Python', 'FastAPI', 'ChromaDB', 'BigQuery', 'Docker'],
+    metrics: [
+      { value: 'Multi-Agent', label: 'Orchestrator Stack' },
+      { value: 'OSFI E-23', label: 'Compliance Gate' },
+      { value: 'Tamper-Proof', label: 'Audit Logs' }
+    ],
+    description: 'A multi-agent supervisor coordinating specialist auditing agents via Google ADK to enforce model compliance with OSFI E-23 and SR 11-7 model risk management guidelines.',
+    architecture: [
+      'Supervisor coordinates auditing checks',
+      'Regulatory agent parses guidelines',
+      'Model risk agent audits bias',
+      'Reliability agent detects drift'
+    ],
+    links: [
+      { label: 'OSFI Navigator Portal', url: 'https://osfi-navigator-frontend.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> },
+      { label: 'OSFI Audit Copilot', url: 'https://osfi-audit-copilot-frontend.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> }
+    ]
+  },
+  {
+    id: 'model-risk-dashboard',
+    title: 'Model Risk Dashboard',
+    headline: 'Visual compliance tracking interface for model drift, calibration, and demographic parity.',
+    badges: [
+      { label: 'Standard', value: 'OSFI E-23', color: 'blue' },
+      { label: 'Metrics', value: 'PSI, AUC, Parity', color: 'emerald' }
+    ],
+    techStack: ['Next.js', 'FastAPI', 'PostgreSQL', 'Tailwind CSS', 'Recharts'],
+    metrics: [
+      { value: 'OSFI E-23', label: 'Compliant' },
+      { value: 'Drift Alerts', label: 'Active' },
+      { value: 'Fairness AIR', label: 'Segment Tracked' }
+    ],
+    description: 'A visual compliance interface tracking Population Stability Index (PSI), Adverse Impact Ratio (AIR) fairness, and ROC AUC performance to block non-compliant model releases.',
+    architecture: [
+      'Model telemetry feeds ingestion webhook',
+      'PSI calculations measure covariate drift',
+      'AIR algorithms monitor segment variance',
+      'Interactive Recharts display compliance states'
+    ],
+    links: [
+      { label: 'Model Risk Dashboard — OSFI E-23', url: 'https://model-risk-dashboard.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> }
+    ]
+  },
+  {
+    id: 'can-fraud-bench',
+    title: 'CanFraudBench',
+    headline: 'Open-source Canadian identity-fraud benchmark datasets and calibration drift monitors.',
+    badges: [
+      { label: 'Calibration ECE', value: '< 0.015', color: 'purple' },
+      { label: 'Drift Gates', value: 'Active', color: 'orange' }
+    ],
+    techStack: ['Hugging Face', 'FastAPI', 'PostgreSQL', 'Scikit-learn', 'XGBoost'],
+    metrics: [
+      { value: '< 0.015 ECE', label: 'Expected Calibration Error' },
+      { value: '12+ Types', label: 'Identity Fraud Scenarios' },
+      { value: 'OSS', label: 'GitHub / Hugging Face' }
+    ],
+    description: 'An open-source identity-fraud benchmark designed specifically for Canadian regulated environments. Features automated drift alerts and Expected Calibration Error (ECE) tracking logs to audit financial verification pipelines.',
+    architecture: [
+      'CanFraud dataset repository (Hugging Face)',
+      'Drift monitoring pipeline (PSI calculations)',
+      'FastAPI benchmark scoring endpoints',
+      'XGBoost baseline calibration classifiers'
+    ],
+    links: [
+      { label: 'CanFinBench Dataset', url: 'https://huggingface.co/datasets/CrillyPienaah/CanFinBench', icon: <GitBranch className="w-3.5 h-3.5" /> },
+      { label: 'SFT Llama Model', url: 'https://huggingface.co/CrillyPienaah/CanFinBench-SFT-Llama3.2-1B', icon: <Cpu className="w-3.5 h-3.5" /> },
+      { label: 'Fine-Tuning Notebook', url: 'https://www.kaggle.com/code/christophercrilly/canfinbench-sft-fine-tuning-llama-3-2-on-canadian', icon: <ExternalLink className="w-3.5 h-3.5" /> }
+    ]
+  },
+  {
+    id: 'osfi-navigator',
+    title: 'OSFI Navigator & Audit Copilot',
+    headline: 'Multi-domain regulatory RAG framework mapping Canadian financial audit regulations.',
+    badges: [
+      { label: 'Reg Domains', value: '7 Domains', color: 'blue' },
+      { label: 'Retrieval F1', value: '92.4%', color: 'emerald' }
+    ],
+    techStack: ['Next.js', 'FastAPI', 'ChromaDB', 'Gemini Flash', 'Citation Parser'],
+    metrics: [
+      { value: '7 Domains', label: 'Regulatory Mappings' },
+      { value: 'ChromaDB', label: 'Access-Controlled VDB' },
+      { value: 'Citation', label: 'Deterministic Validation' }
+    ],
+    description: 'A multi-domain RAG framework mapping 7 Canadian regulatory domains (including OSFI E-23 and SR 11-7 guidelines). Features access-controlled vector stores and strict citation verification checking pipelines to prevent LLM hallucinations.',
+    architecture: [
+      'PDF OCR parser with metadata tagging',
+      'ChromaDB Vector Store with IAM role scopes',
+      'HyDE retrieval enhancement pipeline',
+      'Citation verification supervisor'
+    ],
+    links: [
+      { label: 'OSFI Navigator Demo', url: 'https://osfi-navigator-frontend.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> },
+      { label: 'OSFI Audit Copilot Demo', url: 'https://osfi-audit-copilot-frontend.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> },
+      { label: 'Model Risk Dashboard — OSFI E-23', url: 'https://model-risk-dashboard.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> }
+    ]
+  },
+  {
     id: 'pdf-to-sql-pipeline',
     title: 'PDF-to-SQL Pipeline',
     headline: 'Local-first document intelligence API converting unstructured financial PDFs into structured schemas.',
@@ -106,13 +211,12 @@ const projectsData: ProjectCardData[] = [
     headline: 'Multi-Agent clinical intelligence platform for secure radiology workflows & patient portals.',
     badges: [
       { label: 'Radiology AI', value: 'v2.0 Release', color: 'emerald' },
-      { label: 'Compliance', value: 'HIPAA Compliant', color: 'blue' }
+      { label: 'Compliance', value: 'HIPAA-aligned design', color: 'blue' }
     ],
     techStack: ['LangGraph', 'Gemini 2.5 Flash', 'FastAPI', 'Qdrant', 'Next.js 15', 'Streamlit', 'Redis', 'PostgreSQL', 'Docker'],
     metrics: [
-      { value: '-40%', label: 'Report Analysis Time' },
-      { value: '92%', label: 'Verification Confidence' },
-      { value: '8%', label: 'Avg Hallucination Rate' }
+      { value: '92%', label: 'Internal verification-agent metric' },
+      { value: '8%', label: 'Internal verification-agent metric' }
     ],
     description: 'A multi-agent clinical intelligence platform orchestrating specialized AI workers to ingest scans, draft impressions, generate billing codes, and simplify complex diagnostic terminology for patients.',
     architecture: [
@@ -134,15 +238,15 @@ const projectsData: ProjectCardData[] = [
     headline: 'Multi-agent AI system that analyzes business KPIs and generates growth strategies.',
     badges: [
       { label: 'Kaggle AI Agents', value: '11,494 Teams', color: 'purple' },
-      { label: 'Success', value: '100% Rate', color: 'emerald' }
+      { label: 'Validation', value: '18 tests pass', color: 'emerald' }
     ],
     techStack: ['LangGraph', 'Gemini 2.0', 'FastAPI', 'Python', 'Slack API', 'PostgreSQL', 'Pandas', 'Tenacity'],
     metrics: [
-      { value: '11,494', label: 'Teams Competed' },
-      { value: '1ms', label: 'Avg Response Time' },
-      { value: '$135K', label: 'Leak Identified' }
+      { value: '18 Tests', label: 'Passing Tests' },
+      { value: 'Funnel Math', label: 'Calculates revenue-opportunity' },
+      { value: '11,494 Teams', label: 'Google Intensive Competitor' }
     ],
-    description: 'A production 6-agent LangGraph system built for the Kaggle × Google AI Agents Intensive. It ingests user funnel data, identifies bottleneck leakages, ranks marketing ideas via the ICE scoring engine, and generates content routed directly to Slack.',
+    description: 'A production 6-agent LangGraph system built for the Kaggle × Google AI Agents Intensive (11,494 teams). It analyzes revenue-opportunity from funnel drop-offs, ranks marketing ideas via the ICE scoring engine, and generates content routed directly to Slack.',
     architecture: [
       'Funnel Analyst identifies drop-offs',
       'Experiment Generator generates suggestions',
@@ -182,76 +286,22 @@ const projectsData: ProjectCardData[] = [
     ]
   },
   {
-    id: 'can-fraud-bench',
-    title: 'CanFraudBench',
-    headline: 'Open-source Canadian identity-fraud benchmark datasets and calibration drift monitors.',
-    badges: [
-      { label: 'Calibration ECE', value: '< 0.015', color: 'purple' },
-      { label: 'Drift Gates', value: 'Active', color: 'orange' }
-    ],
-    techStack: ['Hugging Face', 'FastAPI', 'PostgreSQL', 'Scikit-learn', 'XGBoost'],
-    metrics: [
-      { value: '< 0.015 ECE', label: 'Expected Calibration Error' },
-      { value: '12+ Types', label: 'Identity Fraud Scenarios' },
-      { value: 'OSS', label: 'GitHub / Hugging Face' }
-    ],
-    description: 'An open-source identity-fraud benchmark designed specifically for Canadian regulated environments. Features automated drift alerts and Expected Calibration Error (ECE) tracking logs to audit financial verification pipelines.',
-    architecture: [
-      'CanFraud dataset repository (Hugging Face)',
-      'Drift monitoring pipeline (PSI calculations)',
-      'FastAPI benchmark scoring endpoints',
-      'XGBoost baseline calibration classifiers'
-    ],
-    links: [
-      { label: 'CanFinBench Dataset', url: 'https://huggingface.co/datasets/CrillyPienaah/CanFinBench', icon: <GitBranch className="w-3.5 h-3.5" /> },
-      { label: 'SFT Llama Model', url: 'https://huggingface.co/CrillyPienaah/CanFinBench-SFT-Llama3.2-1B', icon: <Cpu className="w-3.5 h-3.5" /> },
-      { label: 'Fine-Tuning Notebook', url: 'https://www.kaggle.com/code/christophercrilly/canfinbench-sft-fine-tuning-llama-3-2-on-canadian', icon: <ExternalLink className="w-3.5 h-3.5" /> }
-    ]
-  },
-  {
-    id: 'osfi-navigator',
-    title: 'OSFI Navigator & Audit Copilot',
-    headline: 'Multi-domain regulatory RAG framework mapping Canadian financial audit regulations.',
-    badges: [
-      { label: 'Reg Domains', value: '7 Domains', color: 'blue' },
-      { label: 'Retrieval F1', value: '92.4%', color: 'emerald' }
-    ],
-    techStack: ['Next.js', 'FastAPI', 'ChromaDB', 'Gemini Flash', 'Citation Parser'],
-    metrics: [
-      { value: '7 Domains', label: 'Regulatory Mappings' },
-      { value: 'ChromaDB', label: 'Access-Controlled VDB' },
-      { value: 'Citation', label: 'Deterministic Validation' }
-    ],
-    description: 'A multi-domain RAG framework mapping 7 Canadian regulatory domains (including OSFI E-23 and SR 11-7 guidelines). Features access-controlled vector stores and strict citation verification checking pipelines to prevent LLM hallucinations.',
-    architecture: [
-      'PDF OCR parser with metadata tagging',
-      'ChromaDB Vector Store with IAM role scopes',
-      'HyDE retrieval enhancement pipeline',
-      'Citation verification supervisor'
-    ],
-    links: [
-      { label: 'OSFI Navigator Demo', url: 'https://osfi-navigator-frontend.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> },
-      { label: 'OSFI Audit Copilot Demo', url: 'https://osfi-audit-copilot-frontend.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> },
-      { label: 'Model Risk Dashboard — OSFI E-23', url: 'https://model-risk-dashboard.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> }
-    ]
-  },
-  {
     id: 'self-healing-pipeline',
     title: 'Self-Healing ML Pipeline',
-    headline: 'Autonomous pipeline remediation monitoring system processing hundreds of millions of records.',
+    headline: 'Autonomous pipeline remediation monitoring system running test scenarios to validate fixes.',
     badges: [
-      { label: 'Downtime Reduction', value: '-78%', color: 'emerald' },
-      { label: 'Daily Logs', value: '431M+ records', color: 'purple' }
+      { label: 'Validation Engine', value: '40 Scenarios', color: 'emerald' },
+      { label: 'AWS Deploy', value: 'App Runner + RDS', color: 'blue' }
     ],
-    techStack: ['GCP Vertex AI', 'AWS RDS', 'Airflow', 'MLflow', 'Docker', 'AsyncIO'],
+    techStack: ['AWS App Runner', 'AWS RDS', 'Airflow', 'MLflow', 'Docker', 'AsyncIO', 'Python'],
     metrics: [
-      { value: '-78%', label: 'Downtime Reduction' },
-      { value: '431M+', label: 'Daily Telemetry Logs' },
+      { value: '40', label: 'Test Scenarios' },
+      { value: 'AWS Stack', label: 'App Runner + RDS' },
       { value: '< 30s', label: 'Anomaly Remediation' }
     ],
-    description: 'An automated self-healing pipeline processor running across GCP and AWS. It intercepts schema drifts, data quality anomalies, or pipeline failures, spinning up isolated Docker sandbox execution environments to validate fixes before promotion.',
+    description: 'An automated self-healing pipeline processor deployed on AWS (App Runner + RDS) to audit data pipeline flows. Cuts time-to-resolution from hours to under a minute by spinning up isolated Docker containers to validate fixes before promotion.',
     architecture: [
-      'Airflow log interception daemon',
+      'Airflow logs ingestion via AWS CloudWatch',
       'Detective Agent diagnostics block',
       'Isolated Docker testing sandbox container',
       'Auto-rollback DB deployment gate'
@@ -383,6 +433,16 @@ export default function ProjectMetricsGrid() {
                             GovernanceOps
                           </span>
                         )}
+                        {project.id === 'governance-control-tower' && (
+                          <span className="p-1 bg-blue-500/10 border border-blue-500/20 rounded text-blue-400 text-[9px] font-mono tracking-widest uppercase">
+                            ADK Supervisor
+                          </span>
+                        )}
+                        {project.id === 'model-risk-dashboard' && (
+                          <span className="p-1 bg-emerald-500/10 border border-emerald-500/20 rounded text-emerald-400 text-[9px] font-mono tracking-widest uppercase">
+                            Model Risk
+                          </span>
+                        )}
                         {project.id === 'pdf-to-sql-pipeline' && (
                           <span className="p-1 bg-blue-500/10 border border-blue-500/20 rounded text-blue-450 text-[9px] font-mono tracking-widest uppercase">
                             Data Eng
@@ -433,12 +493,12 @@ export default function ProjectMetricsGrid() {
                     {project.id === 'sme-growth-copilot' && (
                       <>
                         <div className="hidden md:block space-y-0.5">
-                          <span className="block text-sm md:text-base font-extrabold text-emerald-400 tracking-tight">100%</span>
-                          <span className="text-[9px] text-zinc-500 uppercase tracking-widest block leading-tight">Success Rate</span>
+                          <span className="block text-sm md:text-base font-extrabold text-emerald-400 tracking-tight">18</span>
+                          <span className="text-[9px] text-zinc-500 uppercase tracking-widest block leading-tight">Passing Tests</span>
                         </div>
                         <div className="hidden md:block space-y-0.5">
-                          <span className="block text-sm md:text-base font-extrabold text-purple-400 tracking-tight">69%</span>
-                          <span className="text-[9px] text-zinc-500 uppercase tracking-widest block leading-tight">Code Coverage</span>
+                          <span className="block text-sm md:text-base font-extrabold text-purple-400 tracking-tight font-sans">Funnel Math</span>
+                          <span className="text-[9px] text-zinc-500 uppercase tracking-widest block leading-tight">Drop-Off Calculations</span>
                         </div>
                       </>
                     )}
@@ -446,11 +506,11 @@ export default function ProjectMetricsGrid() {
                       <>
                         <div className="hidden md:block space-y-0.5">
                           <span className="block text-sm md:text-base font-extrabold text-emerald-400 tracking-tight">FHIR R4</span>
-                          <span className="text-[9px] text-zinc-500 uppercase tracking-widest block leading-tight">Interoperable</span>
+                          <span className="text-[9px] text-zinc-500 uppercase tracking-widest block leading-tight">Standardized Integration</span>
                         </div>
                         <div className="hidden md:block space-y-0.5">
-                          <span className="block text-sm md:text-base font-extrabold text-purple-400 tracking-tight">HIPAA</span>
-                          <span className="text-[9px] text-zinc-500 uppercase tracking-widest block leading-tight">Compliant</span>
+                          <span className="block text-sm md:text-base font-extrabold text-purple-400 tracking-tight font-sans">HIPAA-aligned</span>
+                          <span className="text-[9px] text-zinc-500 uppercase tracking-widest block leading-tight">Design</span>
                         </div>
                       </>
                     )}
@@ -473,7 +533,7 @@ export default function ProjectMetricsGrid() {
                           <span className="text-[9px] text-zinc-500 uppercase tracking-widest block leading-tight">Data By Design</span>
                         </div>
                         <div className="hidden md:block space-y-0.5">
-                          <span className="block text-sm md:text-base font-extrabold text-purple-400 tracking-tight">CPU-Only</span>
+                          <span className="block text-sm md:text-base font-extrabold text-purple-400 tracking-tight font-sans">CPU-Only</span>
                           <span className="text-[9px] text-zinc-500 uppercase tracking-widest block leading-tight">Zero-GPU</span>
                         </div>
                       </>
@@ -481,7 +541,7 @@ export default function ProjectMetricsGrid() {
                     {project.id === 'governance-ops' && (
                       <>
                         <div className="hidden md:block space-y-0.5">
-                          <span className="block text-sm md:text-base font-extrabold text-emerald-400 tracking-tight">Zero-LLM</span>
+                          <span className="block text-sm md:text-base font-extrabold text-emerald-400 tracking-tight font-sans">Zero-LLM</span>
                           <span className="text-[9px] text-zinc-500 uppercase tracking-widest block leading-tight">Override</span>
                         </div>
                         <div className="hidden md:block space-y-0.5">
@@ -577,7 +637,7 @@ export default function ProjectMetricsGrid() {
                                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center text-[10px] font-mono mt-2">
                                     <div className="p-2 border border-emerald-500/20 bg-emerald-500/5 text-emerald-400 rounded">
                                       APPROVED
-                                      <span className="block text-[8px] text-zinc-550 mt-0.5">All 9 rules pass</span>
+                                      <span className="block text-[8px] text-zinc-555 mt-0.5">All 9 rules pass</span>
                                     </div>
                                     <div className="p-2 border border-orange-500/20 bg-orange-500/5 text-orange-400 rounded">
                                       CONDITIONAL
@@ -642,7 +702,7 @@ export default function ProjectMetricsGrid() {
                                   Designed for agent-first runtimes like the Antigravity workspace platform to execute promotion states.
                                 </p>
                                 <div className="space-y-1 bg-zinc-900 border border-zinc-850 p-3.5 rounded-xl font-mono text-[9px] text-zinc-300">
-                                  <span className="text-[10px] text-zinc-500 uppercase tracking-wider block font-semibold mb-1">Orchestrator Promotion Hook</span>
+                                  <span className="text-[10px] text-zinc-550 uppercase tracking-wider block font-semibold mb-1">Orchestrator Promotion Hook</span>
                                   <pre className="overflow-x-auto">
 {`async def promote_model_to_registry(model_id: str, payload: dict) -> dict:
   # Check deterministic metrics compliance
@@ -663,7 +723,7 @@ export default function ProjectMetricsGrid() {
                             {deepDiveTab === 'tab4' && (
                               <div className="space-y-4">
                                 <h4 className="text-sm font-bold text-white">GitHub Actions Pipeline Integration</h4>
-                                <div className="bg-zinc-900 border border-zinc-850 p-4 rounded-xl space-y-2 font-mono text-[11px]">
+                                <div className="bg-zinc-900 border border-zinc-855 p-4 rounded-xl space-y-2 font-mono text-[11px]">
                                   <span className="text-zinc-500 font-bold block uppercase tracking-wider text-xs font-sans">Sample PyYAML Pipeline Definition</span>
                                   <pre className="overflow-x-auto text-[10px] text-zinc-350 bg-zinc-950 p-3 border border-zinc-800 rounded">
 {`name: GovernanceOps Model Promotion Gate
@@ -732,11 +792,11 @@ jobs:
                                   </div>
                                   <div className="p-3 bg-zinc-900 border border-zinc-850 rounded-xl">
                                     <span className="font-bold text-white block text-xs">Invoices</span>
-                                    <span className="text-[10px] text-zinc-500 block mt-1">Reconciles line-item totals and tax fields.</span>
+                                    <span className="text-[10px] text-zinc-550 block mt-1">Reconciles line-item totals and tax fields.</span>
                                   </div>
                                   <div className="p-3 bg-zinc-900 border border-zinc-850 rounded-xl">
                                     <span className="font-bold text-white block text-xs">Clinical Notes</span>
-                                    <span className="text-[10px] text-zinc-500 block mt-1">Extracts diagnoses codes and provider records.</span>
+                                    <span className="text-[10px] text-zinc-555 block mt-1">Extracts diagnoses codes and provider records.</span>
                                   </div>
                                 </div>
                               </div>
@@ -757,7 +817,7 @@ jobs:
                                         <th className="p-2.5 font-bold text-right">Cost per 10K docs</th>
                                       </tr>
                                     </thead>
-                                    <tbody className="text-zinc-355 divide-y divide-zinc-900">
+                                    <tbody className="text-zinc-350 divide-y divide-zinc-900">
                                       <tr>
                                         <td className="p-2.5">Google Document AI</td>
                                         <td className="p-2.5">$0.06 / page</td>
@@ -776,7 +836,7 @@ jobs:
                                     </tbody>
                                   </table>
                                 </div>
-                                <span className="text-[10px] text-zinc-500 font-mono italic block text-center">
+                                <span className="text-[10px] text-zinc-550 font-mono italic block text-center">
                                   Annual savings: $2,392.00+ relative to Google Doc AI (based on 10,000 files/yr)
                                 </span>
                               </div>
@@ -791,18 +851,18 @@ jobs:
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                   <div className="p-4 bg-zinc-900 border border-zinc-850 rounded-xl space-y-1.5">
                                     <span className="font-bold text-white block">google-genai SDK Migration</span>
-                                    <p className="text-zinc-500 text-[11px] leading-relaxed">
+                                    <p className="text-zinc-550 text-[11px] leading-relaxed">
                                       Upgraded codebases to use the modern, lightweight `google-genai` SDK rather than legacy enterprise SDKs, preventing bloat.
                                     </p>
                                   </div>
                                   <div className="p-4 bg-zinc-900 border border-zinc-850 rounded-xl space-y-1.5">
                                     <span className="font-bold text-white block">Dependency Graph Reduction</span>
                                     <div className="flex items-center justify-between text-[11px] font-mono border-b border-zinc-800 pb-2 mb-2">
-                                      <span className="text-zinc-500">Legacy Dependencies:</span>
+                                      <span className="text-zinc-550">Legacy Dependencies:</span>
                                       <span className="text-red-400 font-bold">200+</span>
                                     </div>
                                     <div className="flex items-center justify-between text-[11px] font-mono">
-                                      <span className="text-zinc-500">New Direct Dependencies:</span>
+                                      <span className="text-zinc-550">New Direct Dependencies:</span>
                                       <span className="text-emerald-400 font-bold">12</span>
                                     </div>
                                   </div>
@@ -823,19 +883,19 @@ jobs:
                                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                   <div className="p-4 bg-zinc-900 border border-zinc-850 rounded-xl space-y-1">
                                     <span className="font-bold text-white block text-xs">Phase 1: Trust Infrastructure</span>
-                                    <p className="text-zinc-500 text-[11px] leading-relaxed">
+                                    <p className="text-zinc-555 text-[11px] leading-relaxed">
                                       Developing a 3-tier validation checklist mapping properties against government spatial zones, ensuring zero duplicate land claims.
                                     </p>
                                   </div>
                                   <div className="p-4 bg-zinc-900 border border-zinc-850 rounded-xl space-y-1">
                                     <span className="font-bold text-white block text-xs">Phase 2: Discovery &amp; Intelligence</span>
-                                    <p className="text-zinc-500 text-[11px] leading-relaxed">
+                                    <p className="text-zinc-555 text-[11px] leading-relaxed">
                                       Integrating interactive Leaflet maps with custom PostGIS querying, paired with recommendations suggesting similar properties based on spatial boundaries.
                                     </p>
                                   </div>
                                   <div className="p-4 bg-zinc-900 border border-zinc-850 rounded-xl space-y-1">
                                     <span className="font-bold text-white block text-xs">Phase 3/4: Scaling &amp; Fractions</span>
-                                    <p className="text-zinc-500 text-[11px] leading-relaxed">
+                                    <p className="text-zinc-555 text-[11px] leading-relaxed">
                                       Fractional real estate tokens mapping shared investments, combined with regression models predicting long-term neighborhood value appreciation.
                                     </p>
                                   </div>
@@ -850,7 +910,7 @@ jobs:
                                   Validates user-submitted coordinate points against official land registry polygons inside NestJS via raw TypeORM queries.
                                 </p>
                                 <div className="space-y-1 bg-zinc-900 border border-zinc-850 p-3.5 rounded-xl font-mono text-[9px] text-zinc-300">
-                                  <span className="text-[10px] text-zinc-500 uppercase tracking-wider block font-semibold mb-1">ST_Contains Coordinate Validation</span>
+                                  <span className="text-[10px] text-zinc-550 uppercase tracking-wider block font-semibold mb-1">ST_Contains Coordinate Validation</span>
                                   <pre className="overflow-x-auto">
 {`async validatePropertyBoundaries(latitude: number, longitude: number): Promise<boolean> {
   // Query returns true if property coordinate falls within official zone polygons
@@ -878,7 +938,7 @@ jobs:
                                   Matches investor profiles against property descriptions using OpenAI embeddings and postgres distance operators.
                                 </p>
                                 <div className="space-y-1 bg-zinc-900 border border-zinc-850 p-3.5 rounded-xl font-mono text-[9px] text-zinc-300">
-                                  <span className="text-[10px] text-zinc-500 uppercase tracking-wider block font-semibold mb-1">pgvector Cosine Distance Query</span>
+                                  <span className="text-[10px] text-zinc-550 uppercase tracking-wider block font-semibold mb-1">pgvector Cosine Distance Query</span>
                                   <pre className="overflow-x-auto">
 {`// Querying Qdrant / pgvector database inside custom match engine
 const matchingProperties = await this.propertyRepository
@@ -899,21 +959,21 @@ const matchingProperties = await this.propertyRepository
                                   Standardizes property values using the Price/Sqft index and real-time conversions to prevent overpricing fraud.
                                 </p>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                  <div className="bg-zinc-900 border border-zinc-850 rounded-xl p-4 space-y-2 font-mono">
+                                  <div className="bg-zinc-900/40 border border-zinc-850 rounded-xl p-4 space-y-2 font-mono">
                                     <div className="flex items-center gap-1 text-white">
                                       <Coins className="w-4 h-4 text-yellow-500" />
                                       <span>Real-Time Currency Conversion Matrix</span>
                                     </div>
-                                    <div className="text-[10px] space-y-1 text-zinc-500">
+                                    <div className="text-[10px] space-y-1 text-zinc-555">
                                       <div>1 USD = 14.80 GHS (Ghana Cedi)</div>
                                       <div>1 USD = 131.50 KES (Kenya Shilling)</div>
                                       <div>1 USD = 1,480.00 NGN (Nigeria Naira)</div>
                                       <div>1 USD = 18.50 ZAR (South Africa Rand)</div>
                                     </div>
                                   </div>
-                                  <div className="bg-zinc-900 border border-zinc-850 rounded-xl p-4 flex flex-col justify-center space-y-1">
+                                  <div className="bg-zinc-900/40 border border-zinc-850 rounded-xl p-4 flex flex-col justify-center space-y-1">
                                     <span className="font-bold text-white block">Price/Sqft Verification Metric</span>
-                                    <p className="text-zinc-500 text-[11px] leading-relaxed">
+                                    <p className="text-zinc-555 text-[11px] leading-relaxed">
                                       Compares average listing price per square foot against neighboring historical records. Overpricing deviations exceeding 15% are auto-flagged for human review.
                                     </p>
                                   </div>
@@ -934,26 +994,26 @@ const matchingProperties = await this.propertyRepository
                                 <p className="text-zinc-400 leading-relaxed">
                                   Coordinates clinical image parsing and diagnostics. A validation loop audits output for hallucinations.
                                 </p>
-                                <div className="grid grid-cols-1 md:grid-cols-4 gap-3 pt-2 font-mono text-[10px] text-zinc-400 text-center mb-4">
-                                  <div className="border border-zinc-800 bg-zinc-900 p-2.5 rounded-lg flex flex-col justify-center">
+                                <div className="grid grid-cols-1 md:grid-cols-4 gap-3 pt-2 font-mono text-[10px] text-zinc-450 text-center mb-4">
+                                  <div className="border border-zinc-855 bg-zinc-900/60 p-2.5 rounded-lg flex flex-col justify-center">
                                     <span className="font-bold text-blue-400 block mb-1">1. Findings Agent</span>
                                     VLM visual scan checks
                                   </div>
-                                  <div className="border border-zinc-800 bg-zinc-900 p-2.5 rounded-lg flex flex-col justify-center">
+                                  <div className="border border-zinc-855 bg-zinc-900/60 p-2.5 rounded-lg flex flex-col justify-center">
                                     <span className="font-bold text-purple-400 block mb-1">2. Impression Agent</span>
                                     Draft diagnostic summary
                                   </div>
-                                  <div className="border border-zinc-800 bg-zinc-900 p-2.5 rounded-lg flex flex-col justify-center">
+                                  <div className="border border-zinc-855 bg-zinc-900/60 p-2.5 rounded-lg flex flex-col justify-center">
                                     <span className="font-bold text-orange-400 block mb-1">3. Coding Agent</span>
                                     ICD-10 &amp; CPT billing code
                                   </div>
-                                  <div className="border border-zinc-800 bg-zinc-900 p-2.5 rounded-lg flex flex-col justify-center">
+                                  <div className="border border-zinc-855 bg-zinc-900/60 p-2.5 rounded-lg flex flex-col justify-center">
                                     <span className="font-bold text-emerald-400 block mb-1">4. Verification Agent</span>
                                     Checks for hallucinations
                                   </div>
                                 </div>
 
-                                <div className="space-y-1 bg-zinc-900 border border-zinc-850 p-3.5 rounded-xl font-mono text-[9px] text-zinc-300">
+                                <div className="space-y-1 bg-zinc-900 border border-zinc-855 p-3.5 rounded-xl font-mono text-[9px] text-zinc-300">
                                   <span className="text-[10px] text-zinc-550 uppercase tracking-wider block font-semibold mb-1">AgentSupervisor LangGraph Definition</span>
                                   <pre className="overflow-x-auto">
 {`class AgentSupervisorState(TypedDict):
@@ -980,12 +1040,12 @@ def route_next_agent(state: AgentSupervisorState):
                                 <p className="text-zinc-400 leading-relaxed">
                                   Sovereign clinical data mapping holding verified medical protocols, mapped to FastAPI.
                                 </p>
-                                <div className="bg-zinc-900 border border-zinc-850 p-4 rounded-xl space-y-3 font-mono text-[11px] text-zinc-400">
+                                <div className="bg-zinc-900 border border-zinc-855 p-4 rounded-xl space-y-3 font-mono text-[11px] text-zinc-400">
                                   <div className="flex items-center gap-2 text-white">
                                     <Database className="w-4 h-4 text-emerald-400" />
                                     <span>Knowledge Ingestion Pipeline Flow</span>
                                   </div>
-                                  <p className="text-xs text-zinc-500 font-sans leading-relaxed">
+                                  <p className="text-xs text-zinc-550 font-sans leading-relaxed">
                                     Diagnostic guidelines and FHIR schemas are chunked, embedded using domain-specific models, and uploaded to a local Qdrant instance. FastAPI queries vectors to check LLM impressions for clinical soundness.
                                   </p>
                                   <div className="p-2 bg-zinc-950 rounded border border-zinc-800 text-[10px] text-blue-400">
@@ -999,22 +1059,22 @@ def route_next_agent(state: AgentSupervisorState):
                               <div className="space-y-4">
                                 <h4 className="text-sm font-bold text-white">Dual-Portal Production Channels</h4>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                  <div className="p-4 bg-zinc-900 border border-zinc-850 rounded-xl space-y-2">
+                                  <div className="p-4 bg-zinc-900 border border-zinc-855 rounded-xl space-y-2">
                                     <span className="font-bold text-white block flex items-center gap-1.5">
                                       <Zap className="w-4 h-4 text-orange-400" />
                                       Radiologist Portal (Streamlit)
                                     </span>
-                                    <p className="text-zinc-500 text-[11px] leading-relaxed">
+                                    <p className="text-zinc-550 text-[11px] leading-relaxed">
                                       Streamlit dashboard integrating Plotly mapping tools. Allows clinicians to upload chest X-rays, audit agent ICD-10 drafts, and check confidence intervals.
                                     </p>
                                   </div>
 
-                                  <div className="p-4 bg-zinc-900 border border-zinc-850 rounded-xl space-y-2">
+                                  <div className="p-4 bg-zinc-900 border border-zinc-855 rounded-xl space-y-2">
                                     <span className="font-bold text-white block flex items-center gap-1.5">
                                       <HeartPulse className="w-4 h-4 text-emerald-400" />
                                       Patient Portal (Next.js 15)
                                     </span>
-                                    <p className="text-zinc-500 text-[11px] leading-relaxed font-sans">
+                                    <p className="text-zinc-555 text-[11px] leading-relaxed font-sans">
                                       Tailwind UI translating dense medical records. Provides 3 reading levels:
                                       <br />
                                       <strong className="text-zinc-300">• Basic</strong> (non-technical summaries)
@@ -1032,20 +1092,20 @@ def route_next_agent(state: AgentSupervisorState):
                               <div className="space-y-4">
                                 <h4 className="text-sm font-bold text-white">Healthcare Security &amp; Compliance</h4>
                                 <p className="text-zinc-400 leading-relaxed">
-                                  Ensuring data sovereignty and HIPAA compliance in clinical environments.
+                                  Ensuring data sovereignty and HIPAA-aligned design in clinical environments.
                                 </p>
                                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
-                                  <div className="p-3 bg-zinc-900 border border-zinc-850 rounded-xl">
+                                  <div className="p-3 bg-zinc-900 border border-zinc-855 rounded-xl">
                                     <span className="font-bold text-white block text-xs">Zero PHI Storage</span>
-                                    <span className="text-[10px] text-zinc-500 block mt-1">Payloads de-identified on upload; no patient credentials stored.</span>
+                                    <span className="text-[10px] text-zinc-550 block mt-1">Payloads de-identified on upload; no patient credentials stored.</span>
                                   </div>
-                                  <div className="p-3 bg-zinc-900 border border-zinc-850 rounded-xl">
+                                  <div className="p-3 bg-zinc-900 border border-zinc-855 rounded-xl">
                                     <span className="font-bold text-white block text-xs">Sovereignty Design</span>
-                                    <span className="text-[10px] text-zinc-550 block mt-1">Local container setup prevents leaks to external servers.</span>
+                                    <span className="text-[10px] text-zinc-555 block mt-1">Local container setup prevents leaks to external servers.</span>
                                   </div>
-                                  <div className="p-3 bg-zinc-900 border border-zinc-850 rounded-xl">
+                                  <div className="p-3 bg-zinc-900 border border-zinc-855 rounded-xl">
                                     <span className="font-bold text-white block text-xs">End-to-End Encryption</span>
-                                    <span className="text-[10px] text-zinc-550 block mt-1">All messages encrypted in transit (TLS 1.3/AES-256).</span>
+                                    <span className="text-[10px] text-zinc-555 block mt-1">All messages encrypted in transit (TLS 1.3/AES-256).</span>
                                   </div>
                                 </div>
                               </div>
@@ -1064,24 +1124,24 @@ def route_next_agent(state: AgentSupervisorState):
                                 <p className="text-zinc-400 leading-relaxed">
                                   A cyclic supervisor workflow coordinating five independent agents, storing global business variables dynamically.
                                 </p>
-                                <div className="grid grid-cols-1 md:grid-cols-5 gap-3 pt-2 font-mono text-[10px] text-zinc-400 text-center">
-                                  <div className="border border-zinc-800 bg-zinc-900 p-2.5 rounded-lg flex flex-col justify-center min-h-[90px]">
+                                <div className="grid grid-cols-1 md:grid-cols-5 gap-3 pt-2 font-mono text-[10px] text-zinc-450 text-center">
+                                  <div className="border border-zinc-850 bg-zinc-900/60 p-2.5 rounded-lg flex flex-col justify-center min-h-[90px]">
                                     <span className="font-bold text-blue-400 block mb-1">1. Funnel Analyst</span>
                                     Locates data drop-offs
                                   </div>
-                                  <div className="border border-zinc-800 bg-zinc-900 p-2.5 rounded-lg flex flex-col justify-center min-h-[90px]">
+                                  <div className="border border-zinc-850 bg-zinc-900/60 p-2.5 rounded-lg flex flex-col justify-center min-h-[90px]">
                                     <span className="font-bold text-purple-400 block mb-1">2. Experimenter</span>
                                     Generates suggestions
                                   </div>
-                                  <div className="border border-zinc-800 bg-zinc-900 p-2.5 rounded-lg flex flex-col justify-center min-h-[90px]">
+                                  <div className="border border-zinc-850 bg-zinc-900/60 p-2.5 rounded-lg flex flex-col justify-center min-h-[90px]">
                                     <span className="font-bold text-orange-400 block mb-1">3. ICE Ranker</span>
                                     Ranks marketing ideas
                                   </div>
-                                  <div className="border border-zinc-800 bg-zinc-900 p-2.5 rounded-lg flex flex-col justify-center min-h-[90px]">
+                                  <div className="border border-zinc-850 bg-zinc-900/60 p-2.5 rounded-lg flex flex-col justify-center min-h-[90px]">
                                     <span className="font-bold text-emerald-400 block mb-1">4. Copywriter</span>
                                     Creates Slack copies
                                   </div>
-                                  <div className="border border-zinc-800 bg-zinc-900 p-2.5 rounded-lg flex flex-col justify-center min-h-[90px]">
+                                  <div className="border border-zinc-850 bg-zinc-900/60 p-2.5 rounded-lg flex flex-col justify-center min-h-[90px]">
                                     <span className="font-bold text-white block mb-1">5. Explainer</span>
                                     Compiles strategic CV
                                   </div>
@@ -1093,7 +1153,7 @@ def route_next_agent(state: AgentSupervisorState):
                               <div className="space-y-4">
                                 <h4 className="text-sm font-bold text-white">Production Code Snippets</h4>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                  <div className="space-y-1 bg-zinc-900 border border-zinc-850 p-3.5 rounded-xl font-mono text-[9px] text-zinc-300">
+                                  <div className="space-y-1 bg-zinc-900 border border-zinc-855 p-3.5 rounded-xl font-mono text-[9px] text-zinc-300">
                                     <span className="text-[10px] text-zinc-500 uppercase tracking-wider block font-semibold mb-1">LangGraph Graph Setup</span>
                                     <pre className="overflow-x-auto">
 {`from langgraph.graph import StateGraph
@@ -1113,7 +1173,7 @@ workflow.add_edge("generator", "ranker")`}
                                     </pre>
                                   </div>
 
-                                  <div className="space-y-1 bg-zinc-900 border border-zinc-850 p-3.5 rounded-xl font-mono text-[9px] text-zinc-300">
+                                  <div className="space-y-1 bg-zinc-900 border border-zinc-855 p-3.5 rounded-xl font-mono text-[9px] text-zinc-300">
                                     <span className="text-[10px] text-zinc-550 uppercase tracking-wider block font-semibold mb-1">Tenacity Retry &amp; Slack Webhook</span>
                                     <pre className="overflow-x-auto">
 {`from tenacity import retry, stop_after_attempt, wait_exponential
@@ -1138,21 +1198,21 @@ def dispatch_slack_alert(webhook_url: str, payload: dict):
                               <div className="space-y-4">
                                 <h4 className="text-sm font-bold text-white">Core Interface Components</h4>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                  <div className="p-3 bg-zinc-900 border border-zinc-850 rounded-xl space-y-1">
+                                  <div className="p-3 bg-zinc-900 border border-zinc-855 rounded-xl space-y-1">
                                     <span className="font-bold text-white block">1. Consumer Landing Page</span>
-                                    <p className="text-zinc-500 text-[11px] leading-relaxed">Sleek client-facing page explaining benefits, pipeline outputs, and consultant-free consulting.</p>
+                                    <p className="text-zinc-550 text-[11px] leading-relaxed">Sleek client-facing page explaining benefits, pipeline outputs, and consultant-free consulting.</p>
                                   </div>
-                                  <div className="p-3 bg-zinc-900 border border-zinc-850 rounded-xl space-y-1">
+                                  <div className="p-3 bg-zinc-900 border border-zinc-855 rounded-xl space-y-1">
                                     <span className="font-bold text-white block">2. Business Analysis Form</span>
-                                    <p className="text-zinc-500 text-[11px] leading-relaxed">Data collection form asking for visitor traffic, signup rates, checkout drop-offs, and product tags.</p>
+                                    <p className="text-zinc-550 text-[11px] leading-relaxed">Data collection form asking for visitor traffic, signup rates, checkout drop-offs, and product tags.</p>
                                   </div>
-                                  <div className="p-3 bg-zinc-900 border border-zinc-850 rounded-xl space-y-1">
+                                  <div className="p-3 bg-zinc-900 border border-zinc-855 rounded-xl space-y-1">
                                     <span className="font-bold text-white block">3. Performance Dashboard</span>
-                                    <p className="text-zinc-500 text-[11px] leading-relaxed font-sans">Displays live conversion funnel charts, prioritized ICE backlogs, and generated ad copy snippets.</p>
+                                    <p className="text-zinc-555 text-[11px] leading-relaxed font-sans">Displays live conversion funnel charts, prioritized ICE backlogs, and generated ad copy snippets.</p>
                                   </div>
-                                  <div className="p-3 bg-zinc-900 border border-zinc-850 rounded-xl space-y-1">
+                                  <div className="p-3 bg-zinc-900 border border-zinc-855 rounded-xl space-y-1">
                                     <span className="font-bold text-white block">4. Slack Ingest Pipeline</span>
-                                    <p className="text-zinc-500 text-[11px] leading-relaxed font-sans">Real-time webhook alert pushing growth summaries and copy scripts directly to Slack channels.</p>
+                                    <p className="text-zinc-555 text-[11px] leading-relaxed font-sans">Real-time webhook alert pushing growth summaries and copy scripts directly to Slack channels.</p>
                                   </div>
                                 </div>
                               </div>
@@ -1164,12 +1224,12 @@ def dispatch_slack_alert(webhook_url: str, payload: dict):
                                 <p className="text-zinc-400 leading-relaxed">
                                   SMEs need a mathematical standard to select ideas without subjective guessing.
                                 </p>
-                                <div className="bg-zinc-900 border border-zinc-850 rounded-xl p-5 text-center flex flex-col items-center justify-center space-y-3">
+                                <div className="bg-zinc-900 border border-zinc-855 rounded-xl p-5 text-center flex flex-col items-center justify-center space-y-3">
                                   <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">Mathematical Formula</span>
                                   <div className="font-mono text-lg md:text-xl font-extrabold text-blue-400 px-4 py-2 border border-blue-500/20 bg-blue-500/5 rounded-lg inline-block">
                                     ICE Score = (Impact &times; Confidence) &divide; Effort
                                   </div>
-                                  <p className="text-[11px] text-zinc-500 max-w-lg leading-relaxed">
+                                  <p className="text-[11px] text-zinc-550 max-w-lg leading-relaxed">
                                     Evaluates whether a marketing campaign should be run. Impact measures scale, Confidence represents historical execution validation, and Effort represents resources.
                                   </p>
                                 </div>
@@ -1194,7 +1254,7 @@ def dispatch_slack_alert(webhook_url: str, payload: dict):
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-[11px] font-mono text-zinc-400 hover:text-white border border-zinc-900 hover:border-zinc-800 bg-zinc-950 px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-1.5 text-[11px] font-mono text-zinc-400 hover:text-white border border-zinc-900 hover:border-zinc-850 bg-zinc-950 px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
                       >
                         {link.icon}
                         <span>{link.label}</span>
@@ -1226,7 +1286,7 @@ def dispatch_slack_alert(webhook_url: str, payload: dict):
             {historicalSystems.map((sys, idx) => (
               <div 
                 key={idx} 
-                className="bg-zinc-900/10 border border-zinc-900 hover:border-zinc-850 hover:bg-zinc-900/15 rounded-xl p-5 flex flex-col justify-between transition-all duration-300 group hover:shadow-lg hover:shadow-black/30"
+                className="bg-zinc-900/10 border border-zinc-900 hover:border-zinc-855 hover:bg-zinc-900/15 rounded-xl p-5 flex flex-col justify-between transition-all duration-300 group hover:shadow-lg hover:shadow-black/30"
               >
                 <div className="space-y-4">
                   <div className="space-y-1.5">

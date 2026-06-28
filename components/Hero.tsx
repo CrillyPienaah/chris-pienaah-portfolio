@@ -98,8 +98,8 @@ const Hero = () => {
             {/* Micro-metrics metrics grid */}
             <div className="grid grid-cols-2 gap-4 max-w-lg border-t border-zinc-900 pt-6">
               <div>
-                <span className="block text-2xl font-bold text-white font-mono">431M+</span>
-                <span className="text-xs text-zinc-500 uppercase tracking-wider font-mono">Telemetry Logs / Day</span>
+                <span className="block text-2xl font-bold text-white font-mono">40+</span>
+                <span className="text-xs text-zinc-500 uppercase tracking-wider font-mono">Pipeline Test Scenarios</span>
               </div>
               <div>
                 <span className="block text-2xl font-bold text-white font-mono">95.4%</span>
@@ -242,7 +242,7 @@ const Hero = () => {
                   Kaggle × Google AI Agents
                 </h3>
                 <p className="text-xs text-zinc-400 leading-normal">
-                  6-agent LangGraph system competitor<br />
+                  Competed in the Kaggle × Google AI Agents Intensive (11,494 teams)<br />
                   <a
                     href="https://kaggle.com/certification/badges/christophercrilly/105"
                     target="_blank"

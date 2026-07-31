@@ -74,26 +74,27 @@ const projectsData: ProjectCardData[] = [
   {
     id: 'model-risk-dashboard',
     title: 'Model Risk Dashboard',
-    headline: 'Visual compliance tracking interface for model drift, calibration, and demographic parity.',
+    headline: 'Continuous model monitoring aligned to OSFI E-23 §4 — drift, performance, and bias surveillance.',
     badges: [
-      { label: 'Standard', value: 'OSFI E-23', color: 'blue' },
+      { label: 'Standard', value: 'OSFI E-23 §4', color: 'blue' },
       { label: 'Metrics', value: 'PSI, AUC, Parity', color: 'emerald' }
     ],
-    techStack: ['Next.js', 'FastAPI', 'PostgreSQL', 'Tailwind CSS', 'Recharts'],
+    techStack: ['FastAPI', 'scipy', 'pandas', 'Next.js', 'Recharts', 'Railway', 'Vercel'],
     metrics: [
-      { value: 'OSFI E-23', label: 'Compliant' },
-      { value: 'Drift Alerts', label: 'Active' },
-      { value: 'Fairness AIR', label: 'Segment Tracked' }
+      { value: 'PSI + AUC', label: 'Drift & Performance' },
+      { value: 'Parity + EO', label: 'Bias Metrics' },
+      { value: '15/Critical', label: 'Story Endpoint Score' }
     ],
-    description: 'A visual compliance interface tracking Population Stability Index (PSI), Adverse Impact Ratio (AIR) fairness, and ROC AUC performance to block non-compliant model releases.',
+    description: 'Continuous model monitoring aligned to OSFI E-23 §4: PSI drift detection, AUC performance tracking, demographic parity and equal opportunity bias metrics, and a monthly surveillance log. Ships with a synthetic 6-month credit model dataset — drift appears at month 4, bias emerges at month 5, and the compliance score drops from stable to 15/Critical as the story unfolds.',
     architecture: [
-      'Model telemetry feeds ingestion webhook',
-      'PSI calculations measure covariate drift',
-      'AIR algorithms monitor segment variance',
-      'Interactive Recharts display compliance states'
+      'PSI drift detection on feature distributions',
+      'AUC performance tracking per surveillance month',
+      'Demographic parity & equal opportunity bias metrics',
+      'Monthly surveillance log drives compliance score'
     ],
     links: [
-      { label: 'Model Risk Dashboard — OSFI E-23', url: 'https://model-risk-dashboard.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> }
+      { label: 'Model Risk Dashboard — OSFI E-23', url: 'https://model-risk-dashboard.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> },
+      { label: 'GitHub Repository', url: 'https://github.com/CrillyPienaah/model-risk-dashboard', icon: <Github className="w-3.5 h-3.5" /> }
     ]
   },
   {
@@ -125,7 +126,7 @@ const projectsData: ProjectCardData[] = [
   },
   {
     id: 'osfi-navigator',
-    title: 'OSFI Navigator & Audit Copilot',
+    title: 'OSFI Navigator',
     headline: 'Multi-domain regulatory RAG framework mapping Canadian financial audit regulations.',
     badges: [
       { label: 'Reg Domains', value: '7 Domains', color: 'blue' },
@@ -146,8 +147,33 @@ const projectsData: ProjectCardData[] = [
     ],
     links: [
       { label: 'OSFI Navigator Demo', url: 'https://osfi-navigator-frontend.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> },
-      { label: 'OSFI Audit Copilot Demo', url: 'https://osfi-audit-copilot-frontend.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> },
       { label: 'Model Risk Dashboard — OSFI E-23', url: 'https://model-risk-dashboard.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> }
+    ]
+  },
+  {
+    id: 'osfi-audit-copilot',
+    title: 'OSFI Audit Copilot',
+    headline: 'AI Governance Compliance Analyzer — OSFI E-23. Upload a model card, validation report, or governance policy; get a structured E-23 compliance report with 100% critical gap detection rate in under 30 seconds.',
+    badges: [
+      { label: 'Critical Gap Detection', value: '100%', color: 'emerald' },
+      { label: 'PII Redaction', value: 'Pre-LLM', color: 'red' }
+    ],
+    techStack: ['FastAPI', 'LangChain', 'GPT-4o-mini', 'Railway', 'Next.js', 'Vercel'],
+    metrics: [
+      { value: '100%', label: 'Score Band Accuracy' },
+      { value: '100%', label: 'Critical Gap Detection' },
+      { value: '80%', label: 'Risk Rating Accuracy' }
+    ],
+    description: 'Analyzes documents against 8 OSFI E-23 requirement categories and returns a formal finding register — not a narrative summary. Each finding carries regulatory source, severity rating, gap description, and remediation recommendation as discrete fields a model risk manager can annotate, override, and sign off on. Critical findings escalate to second-line review per the E-23 three-lines-of-defense model. Eval: 10 E-23 scenarios, gpt-4o-mini, July 2026.',
+    architecture: [
+      'Pattern-based PII redaction before LLM call (8 Canadian categories)',
+      'LLM never sees raw text — redacted excerpt + static E-23 citation corpus',
+      'Finding register JSON: compliance_score, risk_rating, pii_redaction_summary',
+      'Advisory output only — human sign-off required; LLM is never the authorization boundary'
+    ],
+    links: [
+      { label: 'Live Demo', url: 'https://osfi-audit-copilot-frontend.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> },
+      { label: 'GitHub Repository', url: 'https://github.com/CrillyPienaah/osfi-audit-copilot', icon: <Github className="w-3.5 h-3.5" /> }
     ]
   },
   {

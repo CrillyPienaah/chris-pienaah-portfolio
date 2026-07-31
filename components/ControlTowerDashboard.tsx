@@ -333,15 +333,15 @@ export default function ControlTowerDashboard() {
         </div>
       </div>
 
-        {/* 4-Layer Compliance Stack Hierarchy */}
+        {/* 5-Layer Compliance Stack Hierarchy */}
         <div className="border-t border-zinc-900 pt-12 space-y-6">
           <div className="space-y-2">
             <h3 className="text-xl font-bold text-white tracking-tight flex items-center gap-2">
               <Layers className="w-5 h-5 text-blue-400" />
-              4-Layer Compliance Stack Hierarchy
+              5-Layer Compliance Stack Hierarchy
             </h3>
             <p className="text-zinc-500 text-xs font-sans">
-              How the system coordinates from raw benchmarks up to automated promotion gateways.
+              How the system coordinates from raw benchmarks up to continuous post-deployment monitoring.
             </p>
           </div>
           <div className="border border-zinc-900 bg-zinc-950 rounded-xl overflow-hidden shadow-inner">
@@ -354,6 +354,11 @@ export default function ControlTowerDashboard() {
                 </tr>
               </thead>
               <tbody className="text-zinc-400 divide-y divide-zinc-900">
+                <tr>
+                  <td className="p-3 text-cyan-400 font-bold">Layer 5</td>
+                  <td className="p-3 font-bold text-white">Model Risk Dashboard</td>
+                  <td className="p-3">Continuous post-deployment monitoring aligned to OSFI E-23 &sect;4 &mdash; PSI drift detection, AUC performance tracking, demographic parity &amp; equal opportunity bias metrics, monthly surveillance log.</td>
+                </tr>
                 <tr>
                   <td className="p-3 text-blue-400 font-bold">Layer 4</td>
                   <td className="p-3 font-bold text-white">GovernanceOps</td>

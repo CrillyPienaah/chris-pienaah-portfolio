@@ -324,12 +324,13 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/CrillyPienaah/osfi-audit-copilot",
     demoUrl: "https://osfi-audit-copilot-frontend.vercel.app",
     featured: true,
-    description: "Upload a model card, validation report, or governance policy. Get a structured E-23 compliance report with 100% critical gap detection rate in under 30 seconds.",
+    description: "Upload a model card, validation report, or governance policy. Get a structured E-23 compliance report with 100% critical gap detection rate and 3/3 injection attacks blocked in under 30 seconds.",
     problem: "Model risk managers reviewing AI systems against OSFI E-23 get narrative summaries instead of structured findings they can annotate, override, and sign off on — and sending raw governance documents to an LLM creates its own privacy and auditability risks.",
     solution: "Analyzes documents against 8 OSFI E-23 requirement categories and returns a formal finding register — not a narrative summary. Each finding carries the regulatory source, severity rating, gap description, and remediation recommendation as discrete fields. Pre-LLM PII redaction strips 8 Canadian PII pattern categories (SIN, postal codes, email, phone, card numbers, account numbers, titled names, transaction amounts >$10,000) before any text reaches the model — the LLM never sees raw document text and is never the authorization boundary: access control and PII filtering run in FastAPI before the model is called. The finding register is advisory input to human judgment, not a verdict; critical findings trigger second-line review escalation per the OSFI E-23 three-lines-of-defense model.",
     impact: [
       "100% compliance score band accuracy and 100% critical gap detection rate (eval: 10 E-23 scenarios, gpt-4o-mini, July 2026)",
       "80% risk rating accuracy on the same eval set",
+      "3/3 injection attacks blocked post-fix (score inflation, role confusion, instruction hijacking) — pre-fix 1/3, fixed by XML document delimiting",
       "Structured JSON finding register: compliance_score, risk_rating, per-finding severity, regulatory_source citations, and pii_redaction_summary",
       "Redaction summary returned in API response for auditability — counts only, never matched values",
       "Known limitations documented in SECURITY.md: pattern-based redaction is not enterprise DLP; no API auth layer"

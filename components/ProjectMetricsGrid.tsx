@@ -153,7 +153,7 @@ const projectsData: ProjectCardData[] = [
   {
     id: 'osfi-audit-copilot',
     title: 'OSFI Audit Copilot',
-    headline: 'AI Governance Compliance Analyzer — OSFI E-23. Upload a model card, validation report, or governance policy; get a structured E-23 compliance report with 100% critical gap detection rate in under 30 seconds.',
+    headline: 'AI Governance Compliance Analyzer — OSFI E-23. Upload a model card, validation report, or governance policy; get a structured E-23 compliance report with 100% critical gap detection rate and 3/3 injection attacks blocked in under 30 seconds.',
     badges: [
       { label: 'Critical Gap Detection', value: '100%', color: 'emerald' },
       { label: 'PII Redaction', value: 'Pre-LLM', color: 'red' }
@@ -162,12 +162,16 @@ const projectsData: ProjectCardData[] = [
     metrics: [
       { value: '100%', label: 'Score Band Accuracy' },
       { value: '100%', label: 'Critical Gap Detection' },
-      { value: '80%', label: 'Risk Rating Accuracy' }
+      { value: '80%', label: 'Risk Rating Accuracy' },
+      { value: '3/3', label: 'Injection Attacks Blocked' }
     ],
     description: 'Analyzes documents against 8 OSFI E-23 requirement categories and returns a formal finding register — not a narrative summary. Each finding carries regulatory source, severity rating, gap description, and remediation recommendation as discrete fields a model risk manager can annotate, override, and sign off on. Critical findings escalate to second-line review per the E-23 three-lines-of-defense model. Eval: 10 E-23 scenarios, gpt-4o-mini, July 2026.',
     architecture: [
       'Pattern-based PII redaction before LLM call (8 Canadian categories)',
       'LLM never sees raw text — redacted excerpt + static E-23 citation corpus',
+      'XML delimiters isolate document content from prompt instructions',
+      'Adversarial test: 3 attack vectors (score inflation, role confusion, instruction hijacking)',
+      'Pre-fix 1/3 blocked → post-fix 3/3 blocked after XML delimiter fix',
       'Finding register JSON: compliance_score, risk_rating, pii_redaction_summary',
       'Advisory output only — human sign-off required; LLM is never the authorization boundary'
     ],

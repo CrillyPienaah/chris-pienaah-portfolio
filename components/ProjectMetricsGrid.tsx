@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import { Cpu, Database, Layers, Github, ExternalLink, GitBranch, Terminal, Play, CheckCircle2, Award, Zap, Code2, Plus, Minus, ShieldCheck, HeartPulse, MapPin, BadgePercent, Coins, Table } from 'lucide-react';
@@ -21,27 +21,27 @@ const projectsData: ProjectCardData[] = [
   {
     id: 'governance-ops',
     title: 'GovernanceOps',
-    headline: 'DevOps governs software delivery. MLOps governs model delivery. GovernanceOps governs AI deployment.',
+    headline: 'A governance decision, made once by a risk officer, becomes a runtime-enforced AI control — verified end-to-end against live production infrastructure, not just in a test suite.',
     badges: [
-      { label: 'Rules Evaluated', value: '9 Rules', color: 'purple' },
-      { label: 'Decision Control', value: 'Zero-LLM Override', color: 'red' }
+      { label: 'Test Coverage', value: '213 Tests', color: 'purple' },
+      { label: 'Verification', value: 'Live Production', color: 'emerald' }
     ],
-    techStack: ['Python', 'PyYAML', 'Antigravity IDE', 'OSFI E-23', 'SR 11-7', 'GitHub Actions'],
+    techStack: ['Python', 'FastAPI', 'PostgreSQL', 'Next.js', 'Railway', 'OSFI E-23'],
     metrics: [
-      { value: '9 Rules', label: 'Deterministic Gates' },
-      { value: '3 Tiers', label: 'Promotion Tiers' },
-      { value: 'Immutable', label: 'Audit Trail' }
+      { value: '213', label: 'Automated Tests, Both Repos' },
+      { value: '2', label: 'Real Bugs Found & Fixed Live' },
+      { value: 'SHA-256', label: 'Versioned Policy Hashing' }
     ],
-    description: 'An automated model promotion pipeline designed to shift discovery points from post-deployment auditing to an automated pre-deployment gateway, evaluating strict statistical and fairness thresholds.',
+    description: 'A two-service closed-loop AI assurance platform. GovernanceOps Inventory is the system of record for OSFI E-23 model governance decisions — risk tier, autonomy level, permitted/forbidden tools, confidence thresholds. GovernanceOps Agent is a zero-dependency Python runtime library that fetches that policy directly over HTTPS, enforces it inside a live agent process, and reports enforcement evidence back to Inventory, each event tied to the exact policy version and SHA-256 hash that produced it.',
     architecture: [
-      'Git event triggers ingestion webhook',
-      'Evaluation runner checks thresholds',
-      'Policy engine writes results to Git log',
-      'Promotion gate locks deployment status'
+      'Risk officer approves a policy in Inventory (autonomy, tools, thresholds)',
+      'Agent fetches the policy live over HTTPS — nothing hand-entered on the agent side',
+      'A prohibited action is blocked; the decision is signed and timestamped',
+      'Enforcement evidence is reported back to Inventory, tied to a policy version + hash'
     ],
     links: [
-      { label: 'governanceops_docs', url: 'https://github.com/CrillyPienaah/governance-ops', icon: <ExternalLink className="w-3.5 h-3.5" /> },
-      { label: 'governanceops_github', url: 'https://github.com/CrillyPienaah/governance-ops', icon: <Github className="w-3.5 h-3.5" /> }
+      { label: 'governanceops-inventory', url: 'https://github.com/CrillyPienaah/governanceops-inventory', icon: <Github className="w-3.5 h-3.5" /> },
+      { label: 'governanceops-agent', url: 'https://github.com/CrillyPienaah/governanceops-agent', icon: <Github className="w-3.5 h-3.5" /> }
     ],
     hasDeepDive: true
   },
@@ -74,9 +74,9 @@ const projectsData: ProjectCardData[] = [
   {
     id: 'model-risk-dashboard',
     title: 'Model Risk Dashboard',
-    headline: 'Continuous model monitoring aligned to OSFI E-23 §4 — drift, performance, and bias surveillance.',
+    headline: 'Continuous model monitoring aligned to OSFI E-23 Â§4 â€” drift, performance, and bias surveillance.',
     badges: [
-      { label: 'Standard', value: 'OSFI E-23 §4', color: 'blue' },
+      { label: 'Standard', value: 'OSFI E-23 Â§4', color: 'blue' },
       { label: 'Metrics', value: 'PSI, AUC, Parity', color: 'emerald' }
     ],
     techStack: ['FastAPI', 'scipy', 'pandas', 'Next.js', 'Recharts', 'Railway', 'Vercel'],
@@ -85,7 +85,7 @@ const projectsData: ProjectCardData[] = [
       { value: 'Parity + EO', label: 'Bias Metrics' },
       { value: '15/Critical', label: 'Story Endpoint Score' }
     ],
-    description: 'Continuous model monitoring aligned to OSFI E-23 §4: PSI drift detection, AUC performance tracking, demographic parity and equal opportunity bias metrics, and a monthly surveillance log. Ships with a synthetic 6-month credit model dataset — drift appears at month 4, bias emerges at month 5, and the compliance score drops from stable to 15/Critical as the story unfolds.',
+    description: 'Continuous model monitoring aligned to OSFI E-23 Â§4: PSI drift detection, AUC performance tracking, demographic parity and equal opportunity bias metrics, and a monthly surveillance log. Ships with a synthetic 6-month credit model dataset â€” drift appears at month 4, bias emerges at month 5, and the compliance score drops from stable to 15/Critical as the story unfolds.',
     architecture: [
       'PSI drift detection on feature distributions',
       'AUC performance tracking per surveillance month',
@@ -93,7 +93,7 @@ const projectsData: ProjectCardData[] = [
       'Monthly surveillance log drives compliance score'
     ],
     links: [
-      { label: 'Model Risk Dashboard — OSFI E-23', url: 'https://model-risk-dashboard.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> },
+      { label: 'Model Risk Dashboard â€” OSFI E-23', url: 'https://model-risk-dashboard.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> },
       { label: 'GitHub Repository', url: 'https://github.com/CrillyPienaah/model-risk-dashboard', icon: <Github className="w-3.5 h-3.5" /> }
     ]
   },
@@ -147,13 +147,13 @@ const projectsData: ProjectCardData[] = [
     ],
     links: [
       { label: 'OSFI Navigator Demo', url: 'https://osfi-navigator-frontend.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> },
-      { label: 'Model Risk Dashboard — OSFI E-23', url: 'https://model-risk-dashboard.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> }
+      { label: 'Model Risk Dashboard â€” OSFI E-23', url: 'https://model-risk-dashboard.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> }
     ]
   },
   {
     id: 'osfi-audit-copilot',
     title: 'OSFI Audit Copilot',
-    headline: 'AI Governance Compliance Analyzer — OSFI E-23. Upload a model card, validation report, or governance policy; get a structured E-23 compliance report with 100% critical gap detection rate and 3/3 injection attacks blocked in under 30 seconds.',
+    headline: 'AI Governance Compliance Analyzer â€” OSFI E-23. Upload a model card, validation report, or governance policy; get a structured E-23 compliance report with 100% critical gap detection rate and 3/3 injection attacks blocked in under 30 seconds.',
     badges: [
       { label: 'Critical Gap Detection', value: '100%', color: 'emerald' },
       { label: 'PII Redaction', value: 'Pre-LLM', color: 'red' }
@@ -165,15 +165,15 @@ const projectsData: ProjectCardData[] = [
       { value: '80%', label: 'Risk Rating Accuracy' },
       { value: '3/3', label: 'Injection Attacks Blocked' }
     ],
-    description: 'Analyzes documents against 8 OSFI E-23 requirement categories and returns a formal finding register — not a narrative summary. Each finding carries regulatory source, severity rating, gap description, and remediation recommendation as discrete fields a model risk manager can annotate, override, and sign off on. Critical findings escalate to second-line review per the E-23 three-lines-of-defense model. Eval: 10 E-23 scenarios, gpt-4o-mini, July 2026.',
+    description: 'Analyzes documents against 8 OSFI E-23 requirement categories and returns a formal finding register â€” not a narrative summary. Each finding carries regulatory source, severity rating, gap description, and remediation recommendation as discrete fields a model risk manager can annotate, override, and sign off on. Critical findings escalate to second-line review per the E-23 three-lines-of-defense model. Eval: 10 E-23 scenarios, gpt-4o-mini, July 2026.',
     architecture: [
       'Pattern-based PII redaction before LLM call (8 Canadian categories)',
-      'LLM never sees raw text — redacted excerpt + static E-23 citation corpus',
+      'LLM never sees raw text â€” redacted excerpt + static E-23 citation corpus',
       'XML delimiters isolate document content from prompt instructions',
       'Adversarial test: 3 attack vectors (score inflation, role confusion, instruction hijacking)',
-      'Pre-fix 1/3 blocked → post-fix 3/3 blocked after XML delimiter fix',
+      'Pre-fix 1/3 blocked â†’ post-fix 3/3 blocked after XML delimiter fix',
       'Finding register JSON: compliance_score, risk_rating, pii_redaction_summary',
-      'Advisory output only — human sign-off required; LLM is never the authorization boundary'
+      'Advisory output only â€” human sign-off required; LLM is never the authorization boundary'
     ],
     links: [
       { label: 'Live Demo', url: 'https://osfi-audit-copilot-frontend.vercel.app', icon: <ExternalLink className="w-3.5 h-3.5" /> },
@@ -211,7 +211,7 @@ const projectsData: ProjectCardData[] = [
     id: 'daavi',
     title: 'Daavi',
     headline: 'Intelligent Property Discovery & Verification Platform.',
-    dedication: "Named in honor of my late mother, Felicia Pienaah 'Daavi' — embodying absolute trust and safety.",
+    dedication: "Named in honor of my late mother, Felicia Pienaah 'Daavi' â€” embodying absolute trust and safety.",
     badges: [
       { label: 'Fraud Filter', value: '95% Rate', color: 'red' },
       { label: 'Target Market', value: 'NA/EU Diaspora', color: 'blue' }
@@ -276,7 +276,7 @@ const projectsData: ProjectCardData[] = [
       { value: 'Funnel Math', label: 'Calculates revenue-opportunity' },
       { value: '11,494 Teams', label: 'Google Intensive Competitor' }
     ],
-    description: 'A production 6-agent LangGraph system built for the Kaggle × Google AI Agents Intensive (11,494 teams). It analyzes revenue-opportunity from funnel drop-offs, ranks marketing ideas via the ICE scoring engine, and generates content routed directly to Slack.',
+    description: 'A production 6-agent LangGraph system built for the Kaggle Ã— Google AI Agents Intensive (11,494 teams). It analyzes revenue-opportunity from funnel drop-offs, ranks marketing ideas via the ICE scoring engine, and generates content routed directly to Slack.',
     architecture: [
       'Funnel Analyst identifies drop-offs',
       'Experiment Generator generates suggestions',
@@ -1107,11 +1107,11 @@ def route_next_agent(state: AgentSupervisorState):
                                     <p className="text-zinc-555 text-[11px] leading-relaxed font-sans">
                                       Tailwind UI translating dense medical records. Provides 3 reading levels:
                                       <br />
-                                      <strong className="text-zinc-300">• Basic</strong> (non-technical summaries)
+                                      <strong className="text-zinc-300">â€¢ Basic</strong> (non-technical summaries)
                                       <br />
-                                      <strong className="text-zinc-300">• Intermediate</strong> (vocabulary assistance)
+                                      <strong className="text-zinc-300">â€¢ Intermediate</strong> (vocabulary assistance)
                                       <br />
-                                      <strong className="text-zinc-300">• Advanced</strong> (original radiology text)
+                                      <strong className="text-zinc-300">â€¢ Advanced</strong> (original radiology text)
                                     </p>
                                   </div>
                                 </div>

@@ -412,10 +412,10 @@ export default function ProjectMetricsGrid() {
       ];
     } else if (id === 'governance-ops') {
       return [
-        { id: 'tab1', label: 'The Vision', icon: <Layers className="w-3.5 h-3.5" /> },
-        { id: 'tab2', label: 'Deterministic Rules', icon: <Cpu className="w-3.5 h-3.5" /> },
-        { id: 'tab3', label: 'Registry Interface', icon: <Code2 className="w-3.5 h-3.5" /> },
-        { id: 'tab4', label: 'Pipeline Action', icon: <ShieldCheck className="w-3.5 h-3.5" /> }
+        { id: 'tab1', label: 'The Architecture', icon: <Layers className="w-3.5 h-3.5" /> },
+        { id: 'tab2', label: 'Policy Versioning', icon: <Cpu className="w-3.5 h-3.5" /> },
+        { id: 'tab3', label: 'Live Round-Trip', icon: <Code2 className="w-3.5 h-3.5" /> },
+        { id: 'tab4', label: 'Evidence Return', icon: <ShieldCheck className="w-3.5 h-3.5" /> }
       ];
     }
     return [];
@@ -655,27 +655,27 @@ export default function ProjectMetricsGrid() {
                           <>
                             {deepDiveTab === 'tab1' && (
                               <div className="space-y-4">
-                                <h4 className="text-sm font-bold text-white">Shifting Audits to Pre-Deployment Control</h4>
+                                <h4 className="text-sm font-bold text-white">From Governance Decision to Runtime Enforcement</h4>
                                 <p className="text-zinc-400 leading-relaxed font-sans">
-                                  Rather than waiting for manual post-deployment audits, GovernanceOps serves as an automated release blocker during Git release processes.
+                                  Inventory is the system of record: a risk officer sets autonomy level, permitted/forbidden tools, and thresholds. Agent fetches that policy live over HTTPS and enforces it inside a running agent process -- verified end-to-end against a real deployed instance.
                                 </p>
                                 <div className="p-4 bg-zinc-900 border border-zinc-850 rounded-xl space-y-2">
                                   <span className="font-bold text-white block flex items-center gap-1.5">
                                     <ShieldCheck className="w-4 h-4 text-blue-400" />
-                                    Automated Promotion Tiers
+                                    Enforcement Decisions
                                   </span>
                                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center text-[10px] font-mono mt-2">
                                     <div className="p-2 border border-emerald-500/20 bg-emerald-500/5 text-emerald-400 rounded">
-                                      APPROVED
-                                      <span className="block text-[8px] text-zinc-555 mt-0.5">All 9 rules pass</span>
+                                      ALLOW
+                                      <span className="block text-[8px] text-zinc-555 mt-0.5">Confidence + tier meet threshold</span>
                                     </div>
                                     <div className="p-2 border border-orange-500/20 bg-orange-500/5 text-orange-400 rounded">
-                                      CONDITIONAL
-                                      <span className="block text-[8px] text-zinc-555 mt-0.5">Minor warning flags</span>
+                                      REQUIRE_APPROVAL
+                                      <span className="block text-[8px] text-zinc-555 mt-0.5">No rule matched -- safe default</span>
                                     </div>
                                     <div className="p-2 border border-red-500/20 bg-red-500/5 text-red-400 rounded">
-                                      BLOCKED
-                                      <span className="block text-[8px] text-zinc-555 mt-0.5">Critical fairness/drift fail</span>
+                                      BLOCK
+                                      <span className="block text-[8px] text-zinc-555 mt-0.5">Tool forbidden per Inventory record</span>
                                     </div>
                                   </div>
                                 </div>
@@ -684,41 +684,27 @@ export default function ProjectMetricsGrid() {
 
                             {deepDiveTab === 'tab2' && (
                               <div className="space-y-4">
-                                <h4 className="text-sm font-bold text-white">9-Rule Deterministic Evaluation Engine</h4>
+                                <h4 className="text-sm font-bold text-white">Six Governance Primitives + SHA-256 Policy Versioning</h4>
                                 <p className="text-zinc-400 leading-relaxed font-sans">
-                                  The engine evaluates strict Python conditional structures, disallowing any LLM overrides to ensure strict compliance.
+                                  Every runtime-policy change gets a version number and a content hash, so an enforcement decision is traceable to the exact policy state that produced it -- not just "the policy" as it looks today.
                                 </p>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                   <div className="p-3 bg-zinc-900 border border-zinc-850 rounded-xl space-y-1.5 font-mono text-[10px]">
-                                    <span className="font-bold text-white block text-xs font-sans">Rule Metrics &amp; Thresholds</span>
+                                    <span className="font-bold text-white block text-xs font-sans">Governance Primitives</span>
                                     <div className="space-y-1 text-zinc-400">
-                                      <div className="flex justify-between border-b border-zinc-800/60 pb-1">
-                                        <span>Fairness (AIR)</span>
-                                        <span className="text-blue-400">&gt;= 0.80</span>
-                                      </div>
-                                      <div className="flex justify-between border-b border-zinc-800/60 pb-1">
-                                        <span>TPR Gap</span>
-                                        <span className="text-blue-400">&lt; 0.10</span>
-                                      </div>
-                                      <div className="flex justify-between border-b border-zinc-800/60 pb-1">
-                                        <span>Drift (PSI)</span>
-                                        <span className="text-blue-400">&lt; 0.20</span>
-                                      </div>
-                                      <div className="flex justify-between border-b border-zinc-800/60 pb-1">
-                                        <span>Performance (AUC)</span>
-                                        <span className="text-blue-400">&gt;= 0.70</span>
-                                      </div>
-                                      <div className="flex justify-between">
-                                        <span>Hallucination Risk</span>
-                                        <span className="text-blue-400">&lt; 0.10</span>
-                                      </div>
+                                      <div className="border-b border-zinc-800/60 pb-1">Autonomy Tiering (L0-L4)</div>
+                                      <div className="border-b border-zinc-800/60 pb-1">Tool Permission Scoping</div>
+                                      <div className="border-b border-zinc-800/60 pb-1">Confidence Gating</div>
+                                      <div className="border-b border-zinc-800/60 pb-1">HITL Checkpoints</div>
+                                      <div className="border-b border-zinc-800/60 pb-1">Kill Switch</div>
+                                      <div>Hash-Chained Audit Log</div>
                                     </div>
                                   </div>
 
                                   <div className="p-3 bg-zinc-900 border border-zinc-850 rounded-xl flex flex-col justify-center">
-                                    <span className="font-bold text-white block text-xs mb-1">Zero-LLM Decision Override</span>
+                                    <span className="font-bold text-white block text-xs mb-1">Versioned + Tamper-Evident</span>
                                     <p className="text-zinc-500 text-[11px] leading-relaxed font-sans">
-                                      Promotions are gated by deterministic math modules only. GenAI models are prohibited from overriding policies, preventing loop hallucinations from altering promotion status.
+                                      Lists are sorted before hashing so functionally-identical policies always hash identically. Every audit entry is HMAC-signed and hash-chained on the agent side.
                                     </p>
                                   </div>
                                 </div>
@@ -727,24 +713,24 @@ export default function ProjectMetricsGrid() {
 
                             {deepDiveTab === 'tab3' && (
                               <div className="space-y-4">
-                                <h4 className="text-sm font-bold text-white">Registry Promotion Code Interface</h4>
+                                <h4 className="text-sm font-bold text-white">A Real, Live-Verified HTTPS Integration</h4>
                                 <p className="text-zinc-400 leading-relaxed font-sans">
-                                  Designed for agent-first runtimes like the Antigravity workspace platform to execute promotion states.
+                                  Not a mockup: this is the actual call used to verify the round-trip against a production deployment.
                                 </p>
                                 <div className="space-y-1 bg-zinc-900 border border-zinc-850 p-3.5 rounded-xl font-mono text-[9px] text-zinc-300">
-                                  <span className="text-[10px] text-zinc-550 uppercase tracking-wider block font-semibold mb-1">Orchestrator Promotion Hook</span>
+                                  <span className="text-[10px] text-zinc-550 uppercase tracking-wider block font-semibold mb-1">AgentGovernor.from_governanceops()</span>
                                   <pre className="overflow-x-auto">
-{`async def promote_model_to_registry(model_id: str, payload: dict) -> dict:
-  # Check deterministic metrics compliance
-  compliance_audit = await orchestrator.evaluate_model_policies(model_id)
-  
-  if not compliance_audit["is_compliant"]:
-      await orchestrator.set_promotion_status(model_id, status="BLOCKED")
-      raise PolicyException("Model evaluation failed E-23 rules audit.")
-      
-  # Write audit log to immutable Git commit tag
-  await orchestrator.write_immutable_audit_log(model_id, log=compliance_audit["metrics"])
-  return await orchestrator.promote(model_id)`}
+{`governor = AgentGovernor.from_governanceops(
+    ai_system_record_id="...",
+    inventory_base_url="https://your-inventory.example.com/api/v1",
+    secret_key="...", inventory_token="...",
+)
+outcome = governor.evaluate_action(
+    "wire_transfer_x", confidence=0.99,
+    autonomy_level=AutonomyLevel.L4_FULL_AUTONOMY,
+    tool_name="wire_transfer",
+)
+# outcome.allowed is False -- forbidden per Inventory's record`}
                                   </pre>
                                 </div>
                               </div>
@@ -752,22 +738,15 @@ export default function ProjectMetricsGrid() {
 
                             {deepDiveTab === 'tab4' && (
                               <div className="space-y-4">
-                                <h4 className="text-sm font-bold text-white">GitHub Actions Pipeline Integration</h4>
+                                <h4 className="text-sm font-bold text-white">Closing the Loop: Evidence Returned to Inventory</h4>
                                 <div className="bg-zinc-900 border border-zinc-855 p-4 rounded-xl space-y-2 font-mono text-[11px]">
-                                  <span className="text-zinc-500 font-bold block uppercase tracking-wider text-xs font-sans">Sample PyYAML Pipeline Definition</span>
+                                  <span className="text-zinc-500 font-bold block uppercase tracking-wider text-xs font-sans">The Return Path</span>
                                   <pre className="overflow-x-auto text-[10px] text-zinc-350 bg-zinc-950 p-3 border border-zinc-800 rounded">
-{`name: GovernanceOps Model Promotion Gate
-on:
-  push:
-    tags:
-      - 'model-v*'
-
-jobs:
-  gate:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run Deterministic Policy Evaluator
-        run: python -m governanceops.policy_engine --model-id \${{ github.ref_name }}`}
+{`# After a denial, report it back as evidence
+governor.report_event(governor.audit_log.entries[-1])
+# POST /models/RECORD_ID/runtime-events on Inventory's side --
+# stores the event, tied to the policy version + hash
+# that actually governed the decision.`}
                                   </pre>
                                 </div>
                               </div>
